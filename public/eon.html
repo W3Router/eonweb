@@ -4,131 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EON Protocol - Secure IP Proxy Extension</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(to bottom, #000000, #1a1a1a);
-            color: white;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        nav {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .hero {
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .features {
-            padding: 4rem 0;
-            background: rgba(255,255,255,0.02);
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .signup-flow {
-            padding: 4rem 0;
-        }
-
-        .flow-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .step-card {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            position: relative;
-        }
-
-        .step-card::after {
-            content: '→';
-            position: absolute;
-            right: -1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #4f46e5;
-            font-size: 1.5rem;
-        }
-
-        .step-card:last-child::after {
-            display: none;
-        }
-
-        .cta {
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .button {
-            background: #4f46e5;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            border: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .button:hover {
-            background: #4338ca;
-        }
-
-        .security-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(79, 70, 229, 0.1);
-            border-radius: 2rem;
-            color: #4f46e5;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link href="/eonweb/public/css/style.css" rel="stylesheet">
+    <link href="/eonweb/public/css/normalize.css" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -227,5 +104,6 @@
             <button class="button">Install EON Proxy Extension</button>
         </div>
     </section>
+    <script src="/eonweb/public/js/main.js"></script>
 </body>
 </html>
