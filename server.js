@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const pool = require('./config/database');
 const UserService = require('./services/userService');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
 // 中间件
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('./'));
+app.use('/public', express.static('public'));
 
 // 测试数据库连接
 async function testConnection() {
@@ -45,7 +47,7 @@ app.get('/test-register', async (req, res) => {
 
 // 页面路由
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/auth', (req, res) => {
@@ -109,6 +111,43 @@ app.post('/auth/api/login', async (req, res) => {
         res.status(500).json({
             success: false,
             message: error.message
+        });
+    }
+});
+
+// 验证 token 的端点
+app.get('/auth/api/verify', async (req, res) => {
+    try {
+        const token = req.headers.authorization?.replace('Bearer ', '');
+        
+        if (!token) {
+            return res.status(401).json({ 
+                success: false, 
+                message: 'No token provided' 
+            });
+        }
+
+        // 验证 token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        
+        // 检查用户是否存在
+        const user = await UserService.findById(decoded.userId);
+        
+        if (!user) {
+            return res.status(401).json({ 
+                success: false, 
+                message: 'User not found' 
+            });
+        }
+
+        res.json({ 
+            success: true, 
+            message: 'Token is valid' 
+        });
+    } catch (error) {
+        res.status(401).json({ 
+            success: false, 
+            message: 'Invalid token' 
         });
     }
 });

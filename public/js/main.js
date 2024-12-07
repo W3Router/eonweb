@@ -142,9 +142,5 @@ function isRegisteredUser() {
 \
 // 处理 Get Started 按钮点击
 function handleGetStarted() {
-    if (isRegisteredUser()) {
-        window.location.href = 'public/auth/login.html';
-    } else {
-        window.location.href = 'public/auth/register.html';
-    }
+    window.location.href = '/auth/register';
 }
