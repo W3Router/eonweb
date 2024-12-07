@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - EON Protocol</title>
-    <link href="/eonweb/public/css/style.css" rel="stylesheet">
-    <script src="/eonweb/public/js/utils/animations.js"></script>
+    <link href="/eonweb/public/css/style.css"rel="stylesheet">
+    <script src="/eonweb/public/js/main.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -24,101 +24,10 @@
             <button type="submit">Login</button>
         </form>
         <div class="links">
-            <a href="/eonweb/auth/login.html">Login</a>
+            <a href="../../index.html">Back to Home</a>
             <a href="/eonweb/auth/register.html">Register</a>
             <a href="/eonweb/dashboard/index.html">Dashboard</a>
         </div>
     </div>
-
-    <script>
-        async function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                console.log('Attempting login to:', '/auth/api/login');
-                
-                const response = await fetch('/auth/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ email, password })
-                });
-
-                console.log('Response status:', response.status);
-                
-                const responseText = await response.text();
-                console.log('Response text:', responseText);
-
-                let data;
-                try {
-                    data = JSON.parse(responseText);
-                } catch (e) {
-                    throw new Error(`Invalid JSON response: ${responseText.substring(0, 100)}...`);
-                }
-
-                if (data.success) {
-                    window.location.href = '/dashboard';
-                } else {
-                    alert(data.message || 'Login failed. Please check your credentials.');
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                
-                if (error.message.includes('404')) {
-                    alert('Login API not found. Please check server configuration.');
-                } else if (error.message.includes('Invalid JSON')) {
-                    alert('Server returned invalid response. Please contact support.');
-                } else {
-                    alert(`Login failed: ${error.message}`);
-                }
-            }
-        }
-
-        function validateInput() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const emailError = document.getElementById('emailError');
-            const passwordError = document.getElementById('passwordError');
-            let isValid = true;
-
-            emailError.textContent = '';
-            passwordError.textContent = '';
-
-            if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                emailError.textContent = 'Please enter a valid email address';
-                isValid = false;
-            }
-
-            if (!password || password.length < 6) {
-                passwordError.textContent = 'Password must be at least 6 characters long';
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!validateInput()) {
-                return;
-            }
-
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Logging in...';
-
-            try {
-                await login();
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = originalText;
-            }
-        });
-    </script>
 </body>
 </html> 
