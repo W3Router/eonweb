@@ -25,11 +25,11 @@ app.get('/auth', (req, res) => {
 });
 
 app.get('/auth/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/auth/login.html'));
+    res.sendFile(path.join(__dirname, 'public', 'auth', 'login.html'));
 });
 
 app.get('/auth/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/auth/register.html'));
+    res.sendFile(path.join(__dirname, 'public', 'auth', 'register.html'));
 });
 
 app.get('/dashboard', (req, res) => {
