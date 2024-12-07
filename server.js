@@ -9,7 +9,10 @@ const UserService = require('./services/UserService');
 const app = express();
 
 // 中间件
-app.use(cors());
+app.use(cors({
+    origin: 'https://w3router.github.io',
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.static('./')); // 服务根目录文件
 app.use('/public', express.static('public')); // 服务 public 目录

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 获取当前路径
+        const path = window.location.pathname;
+        
+        // 根据路径重定向
+        if (path === '/auth/login') {
+            window.location.href = '/public/auth/login.html';
+        } else if (path === '/auth/register') {
+            window.location.href = '/public/auth/register.html';
+        }
+    </script>
+</head>
+</html> 
