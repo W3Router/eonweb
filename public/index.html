@@ -11,7 +11,7 @@
             --primary-color: #4dabf7;
             --secondary-color: #adb5bd;
             --background-color: #1a1a1a;
-            --text-color: #ffffff;
+            --text-color: #ffffff
         }
 
         [data-theme="dark"] {
@@ -200,6 +200,7 @@
 .cta-button:hover {
     background-color: #0052a3;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
 }
         .section {
             padding: 5rem 2rem;
@@ -693,11 +694,11 @@ footer p {
     <!-- Navigation with Company Logo -->
     <nav class="main-nav" style="background-color: black;">
         <div class="nav-brand">
-            <img src="public/images/enologo.jpg" alt="Company Logo" style="height: 80px; margin-top: 1.5rem;" >
+            <img src="/images/enologo.jpg" alt="Company Logo" style="height: 80px; margin-top: 1.5rem;" >
             <a href="#home"></a>
         </div>
         <div class="nav-links">
-            <a href="/#home" class="nav-link">Home</a>
+            <a href="#home" class="nav-link">Home</a>
             <a href="#projects" class="nav-link">Features</a>
             <a href="#solution" class="nav-link">Solution</a>
             <a href="#about" class="nav-link">About</a>
@@ -710,11 +711,11 @@ footer p {
     <section id="home" class="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
-            <h1>AI Intelligence Meets Secure Distributed Power</h1>
+            <h1>AI Meets Secure Distributed Power</h1>
             <p>Next-Gen Distributed Computing: Powered by FHE</p>
 
         <div class="button-container">
-          <a href="/auth/login" class="cta-button">Get started and Earn</a>
+          <button onclick="handleGetStarted()" class="cta-button">Get started and Earn</button>
         </div>
          
     </section>
@@ -742,7 +743,7 @@ footer p {
 <section id="feature" class="section solution-section">
     <div class="solution-container">
         <div class="solution-image">
-            <img src="public/images/solution.jpg" alt="Solution Image">
+            <img src="images/solution.jpg" alt="Solution Image">
         </div>
         <div class="solution-content">
             <h2>Data Processing Procedure</h2>
@@ -770,7 +771,7 @@ footer p {
             </ul>
         </div>
         <div class="solution-image">
-          <img src="public/images/eonsolution.jpg" alt="Solution Image">
+          <img src="images/eonsolution.jpg" alt="Solution Image">
       </div>
     </div>
 </section>
@@ -799,35 +800,35 @@ footer p {
         </div>
     </section>
 
-<!-- 更合作伙伴部分 -->
+<!-- 更新合作伙伴部分 -->
 <section class="partners-section">
   <h2>Our Partners</h2>
   <div class="partners-container">
     <div class="partners-scroll">
       <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 1">
+        <img src="images/antler.jpg" alt="Partner 1">
       </a>
       <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 2">
+        <img src="images/cogitent.jpg" alt="Partner 2">
       </a>
       <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/omo.jpg" alt="Partner 3">
+        <img src="images/omo.jpg" alt="Partner 3">
       </a>
       <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 4">
+        <img src="images/cogitent.jpg" alt="Partner 4">
       </a>
       <!-- 复制一组用于无缝滚动 -->
       <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 1">
+        <img src="images/antler.jpg" alt="Partner 1">
       </a>
       <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 2">
+        <img src="images/cogitent.jpg" alt="Partner 2">
       </a>
       <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 3">
+        <img src="images/antler.jpg" alt="Partner 3">
       </a>
       <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/omo.jpg" alt="Partner 4">
+        <img src="images/omo.jpg" alt="Partner 4">
       </a>
     </div>
   </div>
@@ -854,7 +855,7 @@ footer p {
       <a href="https://tiktok.com/@eon_protocol" class="social-link tiktok" target="_blank">
         <i class="fab fa-tiktok"></i>
       </a>
-      <a href="https://discord.gg/DnEAGCbm" class="social-link discord" target="_blank">
+      <a href="https://discord.gg/2Yt5eNdm" class="social-link discord" target="_blank">
         <i class="fab fa-discord"></i>
       </a>
       <a href="https://youtube.com/@eon_protocol" class="social-link youtube" target="_blank">
@@ -873,8 +874,6 @@ footer p {
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="public/js/main.js"></script>
-    <script src="public/js/auth.js"></script>
     <script>
         // 初始化 Particles.js
         particlesJS("particles-js", {
@@ -934,7 +933,7 @@ footer p {
             "retina_detect": true
         });
 
-        // 主题切换
+        // 题切换
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
         
         function switchTheme(e) {
@@ -968,8 +967,12 @@ footer p {
         });
 
     </script>
-<!-- 添加Font Awesome图标 -->
+<!-- 加Font Awesome图标 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script src="/js/main.js"></script>
+
+<script src="/js/auth.js"></script>
 
 </body>
 </html>
