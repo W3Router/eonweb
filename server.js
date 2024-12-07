@@ -39,7 +39,7 @@ app.post('/auth/api/register', (req, res) => {
     try {
         const { email, password } = req.body;
         
-        // 这里添加注册逻辑
+        // 这里���加注册逻辑
         // 暂时返回成功响应
         res.json({
             success: true,
