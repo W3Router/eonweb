@@ -128,5 +128,23 @@ function initParticles() \{\
 \}\
 \
 function redirectToLogin() \{\
-    window.location.href = CONFIG.BASE_URL + '/auth/login.html';\
-\}}
+    window.location.href = 'public/auth/login.html';\
+\}\
+\
+function redirectToDashboard() \{\
+    window.location.href = 'public/dashboard/index.html';\
+\}\
+\
+// 检查用户是否已注册
+function isRegisteredUser() {
+    return localStorage.getItem('userRegistered') === 'true';
+}
+\
+// 处理 Get Started 按钮点击
+function handleGetStarted() {
+    if (isRegisteredUser()) {
+        window.location.href = 'public/auth/login.html';
+    } else {
+        window.location.href = 'public/auth/register.html';
+    }
+}

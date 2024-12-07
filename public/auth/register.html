@@ -187,7 +187,7 @@
                 const data = await response.json();
                 if (data.success) {
                     alert('Registration successful! Please login.');
-                    window.location.href = '/auth/login';
+                    handleSuccessfulRegistration();
                 } else {
                     showError('email', data.message);
                 }
@@ -196,10 +196,22 @@
             }
         }
 
-        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        function handleSuccessfulRegistration() {
+            localStorage.setItem('userRegistered', 'true');
+            window.location.href = 'login.html';
+        }
+
+        document.getElementById('registerForm').onsubmit = function(e) {
             e.preventDefault();
-            await register();
-        });
+            // 获取表单数据
+            const formData = new FormData(this);
+            
+            // 这里添加你的注册逻辑
+            // ...
+            
+            // 注册成功后调用
+            handleSuccessfulRegistration();
+        };
     </script>
 </body>
 </html> 
