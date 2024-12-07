@@ -1,57 +1,25 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 const path = require('path');
-const pool = require('./config/database');
-const UserService = require('./services/userService');
-const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 const app = express();
 
 // 中间件
+app.use(cors());
 app.use(express.json());
-app.use(express.static('./'));
-app.use('/public', express.static('public'));
+app.use(express.static('./')); // 服务根目录文件
+app.use('/public', express.static('public')); // 服务 public 目录
 
-// 测试数据库连接
-async function testConnection() {
-    try {
-        const connection = await pool.getConnection();
-        console.log('Database connected successfully!');
-        connection.release();
-    } catch (error) {
-        console.error('Database connection failed:', error);
-    }
-}
-
-testConnection();
-
-// 测试注册路由
-app.get('/test-register', async (req, res) => {
-    try {
-        const userId = await UserService.createUser(
-            'testuser', 
-            'test@example.com', 
-            'password123'
-        );
-        res.json({
-            success: true,
-            message: `User registered with ID: ${userId}`
-        });
-    } catch (error) {
-        console.error('Registration error:', error);
-        res.status(500).json({
-            success: false,
-            message: error.message
-        });
-    }
-});
-
-// 页面路由
+// 路由处理
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// 认证相关路由
 app.get('/auth', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'auth', 'login.html'));
+    res.sendFile(path.join(__dirname, 'public', 'auth', 'login.html')); // 直接跳转到登录页
 });
 
 app.get('/auth/login', (req, res) => {
@@ -62,52 +30,22 @@ app.get('/auth/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'auth', 'register.html'));
 });
 
-// API 路由
-app.post('/auth/api/register', async (req, res) => {
-    try {
-        const { username, email, password } = req.body;
-        const userId = await UserService.createUser(username, email, password);
-        res.json({
-            success: true,
-            message: 'Registration successful',
-            userId
-        });
-    } catch (error) {
-        console.error('Registration error:', error);
-        res.status(500).json({
-            success: false,
-            message: error.message
-        });
-    }
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'dashboard', 'index.html'));
 });
 
-app.post('/auth/api/login', async (req, res) => {
+// API 路由
+app.post('/auth/api/register', (req, res) => {
     try {
         const { email, password } = req.body;
-
-        // 验证用户
-        const user = await UserService.verifyUser(email, password);
         
-        if (!user) {
-            return res.status(401).json({
-                success: false,
-                message: 'Invalid email or password'
-            });
-        }
-
-        // 登录成功
+        // 这里添加注册逻辑
+        // 暂时返回成功响应
         res.json({
             success: true,
-            message: 'Login successful',
-            user: {
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                points: user.points
-            }
+            message: 'Registration successful'
         });
     } catch (error) {
-        console.error('Login error:', error);
         res.status(500).json({
             success: false,
             message: error.message
@@ -115,43 +53,12 @@ app.post('/auth/api/login', async (req, res) => {
     }
 });
 
-// 验证 token 的端点
-app.get('/auth/api/verify', async (req, res) => {
-    try {
-        const token = req.headers.authorization?.replace('Bearer ', '');
-        
-        if (!token) {
-            return res.status(401).json({ 
-                success: false, 
-                message: 'No token provided' 
-            });
-        }
+// 数据库连接
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/eon-db')
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
-        // 验证 token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        
-        // 检查用户是否存在
-        const user = await UserService.findById(decoded.userId);
-        
-        if (!user) {
-            return res.status(401).json({ 
-                success: false, 
-                message: 'User not found' 
-            });
-        }
-
-        res.json({ 
-            success: true, 
-            message: 'Token is valid' 
-        });
-    } catch (error) {
-        res.status(401).json({ 
-            success: false, 
-            message: 'Invalid token' 
-        });
-    }
-});
-
+// 启动服务器
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
