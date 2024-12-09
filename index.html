@@ -818,13 +818,23 @@ footer p {
 
     <!-- Ecosystem Section -->
     <section id="ecosystem" class="section">
-        <h2>Ecosystem & Business Model</h2>
+        <h2 style="text-align: center; margin-bottom: 4rem;">Ecosystem & Business Model</h2>
+        <div class="ecosystem-description">
+            <p>EON Protocol creates a decentralized privacy computing network where:</p>
+            <ul>
+                <li>Enterprises can monetize data while maintaining privacy</li>
+                <li>Developers build and integrate privacy solutions</li>
+                <li>Community members contribute computing power and earn rewards</li>
+            </ul>
+        </div>
         <div class="ecosystem-container">
-            <!-- 中心平台 -->
+            <!-- 轨道系统 -->
             <div class="eco-center">
                 <div class="platform-logo">
                     <img src="public/images/enologo.jpg" alt="EON Protocol">
-                    <span>Privacy Computing Platform</span>
+                    <div class="platform-text">
+                        <span>Privacy Computing Platform</span>
+                    </div>
                 </div>
                 <!-- 轨道系统 -->
                 <div class="orbit-system">
@@ -848,127 +858,108 @@ footer p {
                     </div>
                 </div>
             </div>
+            <!-- 商业模式说明 -->
+            <div class="business-details">
+                <div class="detail-card" data-role="enterprise">
+                    <h3><i class="fas fa-building"></i> Enterprise</h3>
+                    <ul>
+                        <li>Secure data monetization</li>
+                        <li>Privacy-preserving AI training</li>
+                        <li>Regulatory compliance</li>
+                    </ul>
+                </div>
+                <div class="detail-card" data-role="developers">
+                    <h3><i class="fas fa-code"></i> Developers</h3>
+                    <ul>
+                        <li>SDK & API access</li>
+                        <li>Revenue sharing model</li>
+                        <li>Technical support</li>
+                    </ul>
+                </div>
+                <div class="detail-card" data-role="community">
+                    <h3><i class="fas fa-users"></i> Community</h3>
+                    <ul>
+                        <li>Computing power sharing</li>
+                        <li>Data contribution</li>
+                        <li>Network growth rewards</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <style>
-    .ecosystem-container {
-        position: relative;
-        height: 600px;
-        margin: 0 auto;
-        max-width: 1200px;
+    .ecosystem-description {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        text-align: center;
+        color: #e0e0e0;
     }
-    
-    .eco-center {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+
+    .ecosystem-description p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
     }
-    
-    .platform-logo {
-        width: 150px;
-        height: 150px;
-        background: rgba(0, 102, 204, 0.1);
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-        position: relative;
+
+    .ecosystem-description ul {
+        list-style: none;
+        padding: 0;
     }
-    
-    .platform-logo img {
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-    }
-    
-    .orbit-system {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .orbit {
-        position: absolute;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-    }
-    
-    .orbit-1 {
-        width: 300px;
-        height: 300px;
-        animation: rotate 20s linear infinite;
-    }
-    
-    .orbit-2 {
-        width: 450px;
-        height: 450px;
-        animation: rotate 25s linear infinite reverse;
-    }
-    
-    .orbit-3 {
-        width: 600px;
-        height: 600px;
-        animation: rotate 30s linear infinite;
-    }
-    
-    .orbit-point {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        background: rgba(0, 102, 204, 0.2);
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        animation: counter-rotate 20s linear infinite;
-    }
-    
-    .orbit-point i {
-        font-size: 24px;
+
+    .ecosystem-description li {
+        margin: 0.8rem 0;
+        font-size: 1.1rem;
         color: #4dabf7;
     }
-    
-    .orbit-point span {
-        font-size: 12px;
-        margin-top: 5px;
+
+    .business-details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+        padding: 0 2rem;
     }
-    
-    .orbit-point:hover {
-        transform: scale(1.2);
-        background: rgba(0, 102, 204, 0.3);
+
+    .detail-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
     }
-    
-    @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+
+    .detail-card:hover {
+        transform: translateY(-5px);
     }
-    
-    @keyframes counter-rotate {
-        from { transform: rotate(360deg); }
-        to { transform: rotate(0deg); }
+
+    .detail-card h3 {
+        color: #4dabf7;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
-    
-    @media (max-width: 768px) {
-        .ecosystem-container {
-            height: 400px;
-        }
-        
-        .orbit-1 { width: 200px; height: 200px; }
-        .orbit-2 { width: 300px; height: 300px; }
-        .orbit-3 { width: 400px; height: 400px; }
+
+    .detail-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .detail-card li {
+        margin: 0.8rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .detail-card li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #4dabf7;
     }
     </style>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" style="margin-top: 4rem;">
         <div class="contact-container">
             <div class="contact-header">
                 <div class="contact-options">
@@ -1037,7 +1028,6 @@ footer p {
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="public/js/main.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -1058,6 +1048,57 @@ footer p {
         });
     });
     </script>
+
+    <style>
+    .orbit-point {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .orbit-1 .orbit-point {
+        animation: orbit1 20s linear infinite;
+    }
+
+    .orbit-2 .orbit-point {
+        animation: orbit2 25s linear infinite reverse;
+    }
+
+    .orbit-3 .orbit-point {
+        animation: orbit3 30s linear infinite;
+    }
+
+    @keyframes orbit1 {
+        from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+    }
+
+    @keyframes orbit2 {
+        from { transform: rotate(0deg) translateX(225px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(225px) rotate(-360deg); }
+    }
+
+    @keyframes orbit3 {
+        from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+    }
+
+    .platform-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3;
+    }
+
+    .platform-text span {
+        color: #4dabf7;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+    </style>
 
 </body>
 </html>
