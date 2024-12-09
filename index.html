@@ -738,182 +738,355 @@ footer p {
         </div>
     </section>
 
-<section id="value-flow" class="section solution-section">
-    <div class="solution-container">
-        <div class="solution-content">
-            <h2>Value Flow</h2>
-            <div class="flow-steps">
-                <div class="flow-step">
-                    <img src="public/images/data-provider.svg" alt="Data Provider">
-                    <h3>Data Providers</h3>
-                    <p>Secure data monetization with privacy protection</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <img src="public/images/privacy-compute.svg" alt="Privacy Computing">
-                    <h3>Privacy Computing</h3>
-                    <p>Advanced encryption and distributed processing</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <img src="public/images/data-user.svg" alt="Data User">
-                    <h3>Data Users</h3>
-                    <p>Access to valuable data while maintaining privacy</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Ecosystem Section -->
 <section id="ecosystem" class="section">
-    <h2 data-aos="fade-up">Ecosystem & Business Model</h2>
-    <div class="ecosystem-container">
-        <div class="ecosystem-visual" data-aos="fade-right">
-            <div class="eco-diagram">
-                <div class="eco-center">
-                    <img src="public/images/eon-logo-small.png" alt="EON">
-                    <span>Privacy Computing Platform</span>
-                </div>
-                <div class="eco-orbits">
-                    <div class="orbit enterprise">
-                        <div class="orbit-point">
-                            <img src="public/images/enterprise.svg" alt="Enterprise">
+    <h2>Ecosystem & Business Model</h2>
+    <div class="ecosystem-interactive">
+        <div class="eco-center">
+            <div class="platform-core">
+                <img src="public/images/enologo.jpg" alt="EON Platform">
+                <span>Privacy Computing Platform</span>
+            </div>
+            <div class="eco-orbits">
+                <div class="orbit orbit-1">
+                    <div class="orbit-item enterprise" data-type="enterprise">
+                        <div class="orbit-content">
+                            <i class="fas fa-building"></i>
                             <span>Enterprise</span>
                         </div>
                     </div>
-                    <div class="orbit developers">
-                        <div class="orbit-point">
-                            <img src="public/images/developers.svg" alt="Developers">
+                </div>
+                <div class="orbit orbit-2">
+                    <div class="orbit-item developers" data-type="developers">
+                        <div class="orbit-content">
+                            <i class="fas fa-code"></i>
                             <span>Developers</span>
                         </div>
                     </div>
-                    <div class="orbit community">
-                        <div class="orbit-point">
-                            <img src="public/images/community.svg" alt="Community">
+                </div>
+                <div class="orbit orbit-3">
+                    <div class="orbit-item community" data-type="community">
+                        <div class="orbit-content">
+                            <i class="fas fa-users"></i>
                             <span>Community</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ecosystem-content" data-aos="fade-left">
-            <div class="eco-card">
-                <div class="eco-icon">🏢</div>
-                <div class="eco-text">
-                    <h3>Enterprise</h3>
-                    <p>Secure data monetization and AI model training</p>
-                    <ul>
-                        <li>Privacy-preserving computation</li>
-                        <li>Regulatory compliance</li>
-                        <li>Data marketplace</li>
-                    </ul>
-                </div>
+        <div class="eco-details">
+            <div class="detail-card enterprise-detail">
+                <h3>Enterprise</h3>
+                <ul>
+                    <li>Secure Data Monetization</li>
+                    <li>Privacy-Preserving AI Training</li>
+                    <li>Regulatory Compliance</li>
+                </ul>
             </div>
-            <div class="eco-card">
-                <div class="eco-icon">👨‍💻</div>
-                <div class="eco-text">
-                    <h3>Developers</h3>
-                    <p>Build and integrate privacy solutions</p>
-                    <ul>
-                        <li>SDK & API access</li>
-                        <li>Revenue sharing</li>
-                        <li>Technical support</li>
-                    </ul>
-                </div>
+            <div class="detail-card developers-detail">
+                <h3>Developers</h3>
+                <ul>
+                    <li>SDK & API Access</li>
+                    <li>Revenue Sharing Model</li>
+                    <li>Technical Support</li>
+                </ul>
             </div>
-            <div class="eco-card">
-                <div class="eco-icon">🌐</div>
-                <div class="eco-text">
-                    <h3>Community</h3>
-                    <p>Contribute and earn rewards</p>
-                    <ul>
-                        <li>Computing power sharing</li>
-                        <li>Data contribution</li>
-                        <li>Network validation</li>
-                    </ul>
-                </div>
+            <div class="detail-card community-detail">
+                <h3>Community</h3>
+                <ul>
+                    <li>Computing Power Sharing</li>
+                    <li>Data Contribution</li>
+                    <li>Network Growth Rewards</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Company Section -->
-<section id="company" class="section">
-    <div class="vision-section" data-aos="fade-up">
-        <h2>Our Vision</h2>
-        <p class="vision-text">Building the future of privacy-preserving data platform for AI</p>
-        <div class="vision-grid">
-            <div class="vision-card">
-                <img src="public/images/vision-privacy.svg" alt="Privacy">
-                <h3>Privacy First</h3>
-                <p>Ensuring data privacy while enabling value creation</p>
-            </div>
-            <div class="vision-card">
-                <img src="public/images/vision-innovation.svg" alt="Innovation">
-                <h3>Innovation</h3>
-                <p>Advancing privacy computing technology</p>
-            </div>
-            <div class="vision-card">
-                <img src="public/images/vision-ecosystem.svg" alt="Ecosystem">
-                <h3>Open Ecosystem</h3>
-                <p>Building a thriving privacy computing community</p>
-            </div>
-        </div>
-    </div>
+<style>
+.ecosystem-interactive {
+    position: relative;
+    height: 600px;
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+.eco-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.platform-core {
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 102, 204, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+.platform-core img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.eco-orbits {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit {
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+
+footer p {
+    color: #888;
+    margin: 0;
+    padding: 1rem 0;
+    background: #1a1a1a;
+}
+.contact-section {
+    background: #1a1a1a;
+    padding: 5rem 0;
+    color: #fff;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.contact-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+}
+
+.contact-description {
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    background: #2a2a2a;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+/* 社交媒体和钱包地址字段 */
+.form-group.social-media,
+.form-group.wallet-address {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.social-media label,
+.form-group.wallet-address label {
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+.form-group.social-media .form-control,
+.form-group.wallet-address .form-control {
+    flex-grow: 1;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.form-control:invalid {
+    border-color: #dc3545;
+}
+
+.form-control:valid {
+    border-color: #28a745;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-form {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 0 15px;
+    }
     
-    <div class="join-section" data-aos="fade-up">
-        <h2>Join Our Team</h2>
-        <p>Help us build the future of privacy computing</p>
-        <div class="positions-grid">
-            <div class="position-card">
-                <h3>Privacy Computing Engineer</h3>
-                <p>Build next-gen privacy solutions</p>
-                <a href="https://docs.google.com/forms/d/xxx" class="apply-btn" target="_blank">Apply Now</a>
-            </div>
-            <div class="position-card">
-                <h3>Distributed Systems Engineer</h3>
-                <p>Design scalable infrastructure</p>
-                <a href="https://docs.google.com/forms/d/xxx" class="apply-btn" target="_blank">Apply Now</a>
-            </div>
-        </div>
-    </div>
-</section>
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    
+    .form-group.social-media,
+    .form-group.wallet-address {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .form-group.social-media label,
+    .form-group.wallet-address label {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+.social-links {
+    padding: 2rem 0;
+    background: #1a1a1a;
+    text-align: center;
+    border-top: 1px solid #333;
+}
 
-<!-- 更合作伙部分 -->
-<section class="partners-section">
-  <h2>Our Partners</h2>
-  <div class="partners-container">
-    <div class="partners-scroll">
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 1">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 2">
-      </a>
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/omo.jpg" alt="Partner 3">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 4">
-      </a>
-      <!-- 复制一组用于无缝滚动 -->
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 1">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 2">
-      </a>
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 3">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/omo.jpg" alt="Partner 4">
-      </a>
-    </div>
-  </div>
-</section>
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
 
+.social-link {
+    color: #888;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: #fff;
+    background: #007bff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.social-link.tiktok:hover {
+    background: #000;
+}
+
+.social-link.discord:hover {
+    background: #7289da;
+}
+
+.social-link.youtube:hover {
+    background: #ff0000;
+}
+
+.social-link.twitter:hover {
+    background: #1da1f2;
+}
+
+.social-link.telegram:hover {
+    background: #0088cc;
+}
+</style>
 
     <!-- Contact Section -->
 <section id="contact" class="contact-section">
@@ -928,11 +1101,6 @@ footer p {
                 <a href="https://docs.google.com/forms/d/xxx" class="contact-link" target="_blank">
                     <h2>Join Our Team</h2>
                     <p>Help us build the future of privacy computing</p>
-                </a>
-                <span class="divider">or</span>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZcbNV-RH8rXRRBRGAYLFx69HOUddvDsSDX3YjPqXbNY19aQ/viewform" target="_blank">
-                    <h2>Join the Waitlist</h2>
-                    <p>Stay updated on upcoming airdrops!</p>
                 </a>
             </div>
         </div>
