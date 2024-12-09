@@ -1181,5 +1181,121 @@ footer p {
         </div>
     </section>
 
+    <style>
+    .ecosystem-container {
+        position: relative;
+        height: 800px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .eco-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+    }
+
+    .platform-logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        background: rgba(0, 102, 204, 0.1);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .orbit {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .orbit-1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-2 {
+        width: 450px;
+        height: 450px;
+    }
+
+    .orbit-3 {
+        width: 600px;
+        height: 600px;
+    }
+
+    .orbit-point {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 102, 204, 0.2);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform-origin: 150px 0;
+    }
+
+    .orbit-1 .orbit-point { transform-origin: 150px 0; }
+    .orbit-2 .orbit-point { transform-origin: 225px 0; }
+    .orbit-3 .orbit-point { transform-origin: 300px 0; }
+
+    @keyframes orbit1 {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes orbit2 {
+        from { transform: rotate(120deg); }
+        to { transform: rotate(480deg); }
+    }
+
+    @keyframes orbit3 {
+        from { transform: rotate(240deg); }
+        to { transform: rotate(600deg); }
+    }
+
+    .orbit-1 .orbit-point {
+        animation: orbit1 20s linear infinite;
+        top: 0;
+        left: 50%;
+    }
+
+    .orbit-2 .orbit-point {
+        animation: orbit2 25s linear infinite;
+        top: 0;
+        left: 50%;
+    }
+
+    .orbit-3 .orbit-point {
+        animation: orbit3 30s linear infinite;
+        top: 0;
+        left: 50%;
+    }
+
+    .orbit-point:hover {
+        transform: scale(1.2);
+        background: rgba(0, 102, 204, 0.3);
+        animation-play-state: paused;
+    }
+    </style>
+
 </body>
 </html>
