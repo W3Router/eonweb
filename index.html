@@ -694,13 +694,13 @@ footer p {
     <!-- Navigation with Company Logo -->
     <nav class="main-nav" style="background-color: black;">
         <div class="nav-brand">
-            <img src="public/images/enologo.jpg" alt="EON Protocol">
+            <img src="public/images/enologo.jpg" alt="EON Protocol" style="height: 40px; margin-top: 8px;">
         </div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#solution">Solution</a>
-            <a href="#resources">Resources</a>
-            <a href="#company">Company</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#solution" class="nav-link">Solution</a>
+            <a href="#resources" class="nav-link">Resources</a>
+            <a href="#company" class="nav-link">Company</a>
             <button class="cta-button contact-us" onclick="window.location.href='#contact'">Contact Us</button>
         </div>
     </nav>
@@ -721,8 +721,8 @@ footer p {
 
 
     <!-- Projects Section -->
-    <section id="projects" class="partners-section">
-        <h2>Distributed Computing powered by FHE</h2>
+    <section id="solution" class="partners-section">
+        <h2>Privacy Computing Solution</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>Fully Homomorphic Encryption</h3>
@@ -739,36 +739,30 @@ footer p {
         </div>
     </section>
 
-<section id="feature" class="section solution-section">
+<section id="value-flow" class="section solution-section">
     <div class="solution-container">
-        <div class="solution-image">
-            <img src="public/images/solution.jpg" alt="Solution Image">
-        </div>
         <div class="solution-content">
-            <h2>Data Processing Procedure</h2>
-            <ul>
-                <li>Reducing computation costs via distributed network</li>
-                <li>A: After data is encrypted, it is segmented into small parts</li>
-                <li>B: These data fragments are processed through distributed computation</li>
-                <li>C: The distributed network enhances computational efficiency</li>
-                <li>D: Processing time improves while privacy is maintained</li>
-            </ul>
+            <h2>Value Flow</h2>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <img src="public/images/data-provider.svg" alt="Data Provider">
+                    <h3>Data Providers</h3>
+                    <p>Secure data monetization with privacy protection</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <img src="public/images/privacy-compute.svg" alt="Privacy Computing">
+                    <h3>Privacy Computing</h3>
+                    <p>Advanced encryption and distributed processing</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <img src="public/images/data-user.svg" alt="Data User">
+                    <h3>Data Users</h3>
+                    <p>Access to valuable data while maintaining privacy</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-<section id="solution" class="section">
-    <h2>Core Technology</h2>
-    <div class="tech-grid">
-        <div class="tech-card">
-            <h3>Distributed Network</h3>
-            <p>Scalable infrastructure supporting massive data processing</p>
-            <ul>
-                <li>High Performance</li>
-                <li>Cost Effective</li>
-                <li>Global Coverage</li>
-            </ul>
-        </div>
-        <!-- 其他技术卡片 -->
     </div>
 </section>
 
