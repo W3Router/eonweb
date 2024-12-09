@@ -767,7 +767,47 @@ footer p {
         </div>
         <div class="ecosystem-content">
             <div class="eco-intro">
-                <img src="public/images/ecosystem.png" alt="EON Ecosystem" class="eco-hero-image">
+                <div class="ecosystem-svg">
+                    <svg width="800" height="400" viewBox="0 0 800 400">
+                        <!-- 中心平台 -->
+                        <g class="platform">
+                            <polygon class="hexagon" 
+                                points="400,150 450,175 450,225 400,250 350,225 350,175" 
+                                fill="url(#platformGradient)"
+                            />
+                            <text x="400" y="205" text-anchor="middle" fill="#fff">EON</text>
+                        </g>
+                        
+                        <!-- 连接线和节点 -->
+                        <g class="connections">
+                            <path class="connection" d="M450,200 L600,100" stroke="url(#lineGradient)" />
+                            <path class="connection" d="M450,200 L600,300" stroke="url(#lineGradient)" />
+                            <path class="connection" d="M350,200 L200,200" stroke="url(#lineGradient)" />
+                            
+                            <circle class="node enterprise" cx="600" cy="100" r="30" fill="url(#nodeGradient)" />
+                            <circle class="node developers" cx="600" cy="300" r="30" fill="url(#nodeGradient)" />
+                            <circle class="node community" cx="200" cy="200" r="30" fill="url(#nodeGradient)" />
+                        </g>
+                        
+                        <!-- 渐变定义 -->
+                        <defs>
+                            <linearGradient id="platformGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1" />
+                            </linearGradient>
+                            
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1" />
+                            </linearGradient>
+                            
+                            <radialGradient id="nodeGradient">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
                 <p>EON Protocol creates a decentralized privacy computing network that connects enterprises, developers, and community members.</p>
             </div>
             <div class="eco-grid">
@@ -1140,6 +1180,47 @@ footer p {
         .section-image img {
             width: 100%;
         }
+    }
+    </style>
+
+    <style>
+    .ecosystem-svg {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .connection {
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+        animation: dash 20s linear infinite;
+    }
+
+    .node {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .node:hover {
+        transform: scale(1.2);
+        filter: brightness(1.2);
+    }
+
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 1000;
+        }
+    }
+
+    /* 添加动画效果 */
+    .platform {
+        animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
     }
     </style>
 
