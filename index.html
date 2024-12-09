@@ -1005,6 +1005,7 @@ footer p {
     <footer>
       <div class="social-links">
         <div class="social-links-container">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
           <a href="https://tiktok.com/@eon_protocol" class="social-link tiktok" target="_blank">
             <i class="fab fa-tiktok"></i>
           </a>
@@ -1184,7 +1185,7 @@ footer p {
     <style>
     .ecosystem-container {
         position: relative;
-        height: 800px;
+        height: 1200px;
         margin: 0 auto;
         max-width: 1200px;
     }
@@ -1192,7 +1193,7 @@ footer p {
     .eco-center {
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 30%;
         transform: translate(-50%, -50%);
         width: 600px;
         height: 600px;
@@ -1258,18 +1259,18 @@ footer p {
     .orbit-3 .orbit-point { transform-origin: 300px 0; }
 
     @keyframes orbit1 {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+        from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
     }
 
     @keyframes orbit2 {
-        from { transform: rotate(120deg); }
-        to { transform: rotate(480deg); }
+        from { transform: rotate(120deg) translateX(225px) rotate(0deg); }
+        to { transform: rotate(480deg) translateX(225px) rotate(-360deg); }
     }
 
     @keyframes orbit3 {
-        from { transform: rotate(240deg); }
-        to { transform: rotate(600deg); }
+        from { transform: rotate(240deg) translateX(300px) rotate(0deg); }
+        to { transform: rotate(600deg) translateX(300px) rotate(-360deg); }
     }
 
     .orbit-1 .orbit-point {
