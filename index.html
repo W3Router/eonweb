@@ -867,8 +867,22 @@ footer p {
         <div class="company-intro">
             <div class="vision-mission-container">
                 <div class="vision-block" data-aos="fade-up">
-                    <div class="section-image">
-                        <img src="public/images/vision.png" alt="Vision">
+                    <div class="vision-svg">
+                        <svg width="1200" height="300" viewBox="0 0 1200 300">
+                            <!-- 抽象几何背景 -->
+                            <defs>
+                                <linearGradient id="visionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.2"/>
+                                    <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.05"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- 几何图形背景 -->
+                            <g class="vision-bg">
+                                <path d="M0,150 Q300,0 600,150 T1200,150" stroke="url(#visionGradient)" fill="none" stroke-width="2"/>
+                                <circle cx="600" cy="150" r="100" fill="url(#visionGradient)" opacity="0.3"/>
+                                <polygon points="550,100 650,100 600,200" fill="url(#visionGradient)" opacity="0.2"/>
+                            </g>
+                        </svg>
                     </div>
                     <h2>Vision</h2>
                     <div class="content-box">
@@ -891,8 +905,23 @@ footer p {
             </div>
 
             <div class="culture-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="section-image">
-                    <img src="public/images/culture.png" alt="Culture">
+                <div class="culture-svg">
+                    <svg width="1200" height="300" viewBox="0 0 1200 300">
+                        <defs>
+                            <linearGradient id="cultureGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.3"/>
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- 文化价值观连接图 -->
+                        <g class="culture-connections">
+                            <circle cx="300" cy="150" r="50" fill="url(#cultureGradient)" class="culture-node"/>
+                            <circle cx="600" cy="150" r="50" fill="url(#cultureGradient)" class="culture-node"/>
+                            <circle cx="900" cy="150" r="50" fill="url(#cultureGradient)" class="culture-node"/>
+                            <path d="M350,150 L550,150" stroke="url(#cultureGradient)" class="culture-line"/>
+                            <path d="M650,150 L850,150" stroke="url(#cultureGradient)" class="culture-line"/>
+                        </g>
+                    </svg>
                 </div>
                 <h2>Culture & Values</h2>
                 <div class="values-grid">
