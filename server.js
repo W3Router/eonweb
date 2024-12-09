@@ -10,6 +10,8 @@ const app = express();
 
 // 中间件
 app.use(cors({
-    origin: ['https://w3router.github.io', 'https://w3router.github.io/eonweb'],
-    credentials: true
+    origin: 'https://w3router.github.io',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 })); 
