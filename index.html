@@ -743,13 +743,22 @@ footer p {
 
     <!-- Ecosystem Section -->
     <section id="ecosystem" class="section">
-        <h2>Ecosystem & Business Model</h2>
+        <div class="section-header">
+            <h2>Ecosystem & Business Model</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-network-wired"></i>
+                <span class="divider-line"></span>
+            </div>
+        </div>
         <div class="ecosystem-content">
             <div class="eco-intro">
+                <img src="public/images/ecosystem.png" alt="EON Ecosystem" class="eco-hero-image">
                 <p>EON Protocol creates a decentralized privacy computing network that connects enterprises, developers, and community members.</p>
             </div>
             <div class="eco-grid">
                 <div class="eco-card">
+                    <div class="eco-card-bg"></div>
                     <div class="eco-icon">
                         <i class="fas fa-building"></i>
                     </div>
@@ -759,8 +768,10 @@ footer p {
                         <li>Privacy-preserving AI training</li>
                         <li>Regulatory compliance</li>
                     </ul>
+                    <img src="public/images/enterprise-bg.png" alt="" class="card-decoration">
                 </div>
                 <div class="eco-card">
+                    <div class="eco-card-bg"></div>
                     <div class="eco-icon">
                         <i class="fas fa-code"></i>
                     </div>
@@ -770,8 +781,10 @@ footer p {
                         <li>Revenue sharing model</li>
                         <li>Technical support</li>
                     </ul>
+                    <img src="public/images/developer-bg.png" alt="" class="card-decoration">
                 </div>
                 <div class="eco-card">
+                    <div class="eco-card-bg"></div>
                     <div class="eco-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -781,6 +794,7 @@ footer p {
                         <li>Data contribution</li>
                         <li>Network growth rewards</li>
                     </ul>
+                    <img src="public/images/community-bg.png" alt="" class="card-decoration">
                 </div>
             </div>
         </div>
@@ -788,11 +802,23 @@ footer p {
 
     <!-- Company Section -->
     <section id="company" class="section">
+        <div class="section-header">
+            <h2>Our Company</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-star"></i>
+                <span class="divider-line"></span>
+            </div>
+        </div>
         <div class="company-intro">
             <div class="vision-mission-container">
                 <div class="vision-block" data-aos="fade-up">
+                    <div class="section-image">
+                        <img src="public/images/vision.png" alt="Vision">
+                    </div>
                     <h2>Vision</h2>
                     <div class="content-box">
+                        <div class="content-bg"></div>
                         <p>EON Protocol envisions a world where the <span class="highlight">free flow of secure and encrypted data</span> 
                         empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders.</p>
                         <p>We strive to establish a digital ecosystem built on <span class="highlight">privacy, security, and interoperability</span>, 
@@ -811,27 +837,38 @@ footer p {
             </div>
 
             <div class="culture-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="section-image">
+                    <img src="public/images/culture.png" alt="Culture">
+                </div>
                 <h2>Culture & Values</h2>
                 <div class="values-grid">
                     <div class="value-card">
+                        <div class="value-card-bg"></div>
                         <i class="fas fa-lightbulb"></i>
                         <h3>Innovation</h3>
                         <p>Leveraging cutting-edge blockchain, AI, and Web3 technologies</p>
+                        <div class="card-glow"></div>
                     </div>
                     <div class="value-card">
+                        <div class="value-card-bg"></div>
                         <i class="fas fa-hands-helping"></i>
                         <h3>Collaboration</h3>
                         <p>Fostering teamwork across employees, partners, and investors</p>
+                        <div class="card-glow"></div>
                     </div>
                     <div class="value-card">
+                        <div class="value-card-bg"></div>
                         <i class="fas fa-shield-alt"></i>
                         <h3>Integrity</h3>
                         <p>Maintaining transparency and ethical business practices</p>
+                        <div class="card-glow"></div>
                     </div>
                     <div class="value-card">
+                        <div class="value-card-bg"></div>
                         <i class="fas fa-users"></i>
                         <h3>Customer-Centricity</h3>
                         <p>Prioritizing user needs and creating secure solutions</p>
+                        <div class="card-glow"></div>
                     </div>
                 </div>
             </div>
@@ -978,6 +1015,117 @@ footer p {
         color: #4dabf7;
         font-size: 1.2rem;
         white-space: nowrap;
+    }
+    </style>
+
+    <!-- Section Headers -->
+    <style>
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .divider-line {
+        height: 1px;
+        width: 100px;
+        background: linear-gradient(90deg, transparent, #4dabf7, transparent);
+        margin: 0 1rem;
+    }
+
+    /* Ecosystem Styles */
+    .eco-hero-image {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        display: block;
+    }
+
+    .eco-card {
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+    }
+
+    .eco-card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(77, 171, 247, 0.1), transparent);
+        z-index: -1;
+    }
+
+    .card-decoration {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 100px;
+        opacity: 0.1;
+    }
+
+    /* Company Section Styles */
+    .section-image {
+        margin-bottom: 2rem;
+    }
+
+    .section-image img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .content-box {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .content-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(77, 171, 247, 0.05), transparent);
+        z-index: -1;
+    }
+
+    .value-card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .value-card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(77, 171, 247, 0.1), transparent);
+        z-index: -1;
+    }
+
+    .card-glow {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(77, 171, 247, 0.2), transparent);
+        border-radius: 50%;
+        top: -50px;
+        right: -50px;
+        z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+        .section-image img {
+            width: 100%;
+        }
     }
     </style>
 
