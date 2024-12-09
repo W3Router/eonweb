@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EON - Dashboard</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .referral-section {
+            padding: 2rem;
+            background: #2a2a2a;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .referral-info {
+            display: flex;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .referral-stats {
+            flex: 1;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .referral-share {
+            flex: 1;
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .referral-link-container {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .referral-link-container input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #222;
+            color: white;
+        }
+
+        #referralQR {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        #referralQR canvas {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -49,33 +101,6 @@
                 </div>
             </div>
 
-            <!-- Referral Section -->
-            <div class="referral-section">
-                <h2>Referral Program</h2>
-                <div class="referral-info">
-                    <div class="referral-stats">
-                        <div class="stat-card">
-                            <h3>Your Referral Code</h3>
-                            <div class="value" id="referralCode">-</div>
-                            <div class="expiry" id="referralExpiry"></div>
-                            <button onclick="generateNewCode()" class="btn-primary">Generate New Code</button>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Referral Count</h3>
-                            <div class="value" id="referralCount">0</div>
-                        </div>
-                    </div>
-                    <div class="referral-share">
-                        <h3>Share Your Referral Link</h3>
-                        <div class="referral-link-container">
-                            <input type="text" id="referralLink" readonly>
-                            <button onclick="copyReferralLink()" class="btn-secondary">Copy</button>
-                        </div>
-                        <div id="referralQR"></div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Available Tasks Section -->
             <div class="section">
                 <h2>Available Tasks</h2>
@@ -105,6 +130,33 @@
                 </div>
             </div>
 
+            <!-- Referral Section -->
+            <div class="referral-section">
+                <h2>Referral Program</h2>
+                <div class="referral-info">
+                    <div class="referral-stats">
+                        <div class="stat-card">
+                            <h3>Your Referral Code</h3>
+                            <div class="value" id="referralCode">-</div>
+                            <div class="expiry" id="referralExpiry"></div>
+                            <button onclick="generateNewCode()" class="btn-primary">Generate New Code</button>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Referral Count</h3>
+                            <div class="value" id="referralCount">0</div>
+                        </div>
+                    </div>
+                    <div class="referral-share">
+                        <h3>Share Your Referral Link</h3>
+                        <div class="referral-link-container">
+                            <input type="text" id="referralLink" readonly>
+                            <button onclick="copyReferralLink()" class="btn-secondary">Copy</button>
+                        </div>
+                        <div id="referralQR"></div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Points History Section -->
             <div class="section">
                 <h2>Points History</h2>
@@ -125,86 +177,86 @@
                     </table>
                 </div>
             </div>
-        </div>
 
-        <!-- Admin Dashboard Content -->
-        <div class="admin-section" style="display: none;">
-            <!-- Task Management -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>Task Management</h2>
-                    <button class="btn-primary" onclick="openNewTaskModal()">Create New Task</button>
-                </div>
-                <div class="task-management-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Task ID</th>
-                                <th>Task Name</th>
-                                <th>Description</th>
-                                <th>Participants</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="taskManagementList">
-                            <tr class="default-task">
-                                <td>001</td>
-                                <td>Bandwidth Sharing</td>
-                                <td>Share bandwidth to support AI data crawling</td>
-                                <td>0</td>
-                                <td><span class="status active">Active</span></td>
-                                <td>
-                                    <button class="btn-icon" disabled title="Default task cannot be edited">✏️</button>
-                                    <button class="btn-icon" onclick="toggleTaskStatus('001')">⏸️</button>
-                                    <button class="btn-icon" disabled title="Default task cannot be deleted">🗑️</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- User Management -->
-            <div class="section">
-                <div class="section-header">
-                    <h2>User Management</h2>
-                    <div class="search-box">
-                        <input type="text" placeholder="Search users..." id="userSearch">
+            <!-- Admin Dashboard Content -->
+            <div class="admin-section" style="display: none;">
+                <!-- Task Management -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Task Management</h2>
+                        <button class="btn-primary" onclick="openNewTaskModal()">Create New Task</button>
+                    </div>
+                    <div class="task-management-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Task ID</th>
+                                    <th>Task Name</th>
+                                    <th>Description</th>
+                                    <th>Participants</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="taskManagementList">
+                                <tr class="default-task">
+                                    <td>001</td>
+                                    <td>Bandwidth Sharing</td>
+                                    <td>Share bandwidth to support AI data crawling</td>
+                                    <td>0</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon" disabled title="Default task cannot be edited">✏️</button>
+                                        <button class="btn-icon" onclick="toggleTaskStatus('001')">⏸️</button>
+                                        <button class="btn-icon" disabled title="Default task cannot be deleted">🗑️</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="user-management-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>User</th>
-                                <th>Email</th>
-                                <th>Total Points</th>
-                                <th>Active Tasks</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="userManagementList">
-                            <tr>
-                                <td>
-                                    <div class="user-info-cell">
-                                        <img src="../images/default-avatar.png" alt="" class="user-avatar-small">
-                                        <span>John Doe</span>
-                                    </div>
-                                </td>
-                                <td>john@example.com</td>
-                                <td>2,500</td>
-                                <td>3</td>
-                                <td><span class="status active">Active</span></td>
-                                <td>
-                                    <button class="btn-icon" onclick="editUser('user1')">✏️</button>
-                                    <button class="btn-icon" onclick="toggleUserStatus('user1')">🔒</button>
-                                    <button class="btn-icon" onclick="adjustPoints('user1')">💰</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <!-- User Management -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>User Management</h2>
+                        <div class="search-box">
+                            <input type="text" placeholder="Search users..." id="userSearch">
+                        </div>
+                    </div>
+                    <div class="user-management-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Total Points</th>
+                                    <th>Active Tasks</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userManagementList">
+                                <tr>
+                                    <td>
+                                        <div class="user-info-cell">
+                                            <img src="../images/default-avatar.png" alt="" class="user-avatar-small">
+                                            <span>John Doe</span>
+                                        </div>
+                                    </td>
+                                    <td>john@example.com</td>
+                                    <td>2,500</td>
+                                    <td>3</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon" onclick="editUser('user1')">✏️</button>
+                                        <button class="btn-icon" onclick="toggleUserStatus('user1')">🔒</button>
+                                        <button class="btn-icon" onclick="adjustPoints('user1')">💰</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,8 +298,12 @@
                 });
                 const data = await response.json();
                 
+                if (!data.success) {
+                    throw new Error(data.message || 'Failed to load referral info');
+                }
+
                 document.getElementById('referralCode').textContent = data.referralCode || '-';
-                document.getElementById('referralCount').textContent = data.referralCount;
+                document.getElementById('referralCount').textContent = data.referralCount || '0';
                 
                 if (data.referralCodeExpiry) {
                     const expiry = new Date(data.referralCodeExpiry);
@@ -256,26 +312,51 @@
                 }
                 
                 if (data.referralLink) {
-                    document.getElementById('referralLink').value = data.referralLink;
-                    QRCode.toCanvas(document.getElementById('referralQR'), data.referralLink);
+                    const linkInput = document.getElementById('referralLink');
+                    linkInput.value = data.referralLink;
+                    QRCode.toCanvas(document.getElementById('referralQR'), data.referralLink, {
+                        width: 200,
+                        margin: 2,
+                        color: {
+                            dark: '#FFF',
+                            light: '#222'
+                        }
+                    });
                 }
             } catch (error) {
                 console.error('Error loading referral info:', error);
+                alert('Failed to load referral information. Please try again.');
             }
         }
 
         async function generateNewCode() {
             try {
+                const button = document.querySelector('button[onclick="generateNewCode()"]');
+                button.disabled = true;
+                button.textContent = 'Generating...';
+
                 const response = await fetch('https://eonweb-production.up.railway.app/api/user/referral/generate', {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                        'Content-Type': 'application/json'
                     }
                 });
+
                 const data = await response.json();
-                await loadReferralInfo();
+                if (data.success) {
+                    await loadReferralInfo();
+                    alert('New referral code generated successfully!');
+                } else {
+                    alert(data.message || 'Failed to generate referral code');
+                }
             } catch (error) {
                 console.error('Error generating referral code:', error);
+                alert('Failed to generate referral code. Please try again.');
+            } finally {
+                const button = document.querySelector('button[onclick="generateNewCode()"]');
+                button.disabled = false;
+                button.textContent = 'Generate New Code';
             }
         }
 
