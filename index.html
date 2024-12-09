@@ -690,6 +690,7 @@ footer p {
 }
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -739,82 +740,6 @@ footer p {
             </div>
         </div>
     </section>
-
-    <!-- Vision & Mission Section -->
-    <section id="vision" class="section vision-section">
-        <div class="vision-container">
-            <div class="vision-content" data-aos="fade-up">
-                <h2>Vision</h2>
-                <p class="vision-text">
-                    EON Protocol envisions a world where the <span class="highlight">free flow of secure and encrypted data</span> 
-                    empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders. 
-                    We strive to establish a digital ecosystem built on <span class="highlight">privacy, security, and interoperability</span>, 
-                    driving trust and innovation globally.
-                </p>
-            </div>
-            
-            <div class="mission-content" data-aos="fade-up" data-aos-delay="200">
-                <h2>Mission</h2>
-                <p class="mission-text">
-                    "We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering 
-                    <span class="highlight">scalable, privacy-preserving, and decentralized technology solutions</span> 
-                    that facilitate the free flow of encrypted data across networks, industries, and borders."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <style>
-    .vision-section {
-        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,102,204,0.05) 100%);
-        padding: 6rem 0;
-    }
-
-    .vision-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .vision-content, .mission-content {
-        margin-bottom: 4rem;
-        text-align: center;
-    }
-
-    .vision-text, .mission-text {
-        font-size: 1.25rem;
-        line-height: 1.8;
-        color: #e0e0e0;
-        margin-top: 2rem;
-    }
-
-    .mission-text {
-        font-style: italic;
-    }
-
-    .highlight {
-        color: #4dabf7;
-        font-weight: 500;
-    }
-
-    .vision-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        position: relative;
-        display: inline-block;
-    }
-
-    .vision-section h2::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: #4dabf7;
-    }
-    </style>
 
     <!-- Ecosystem Section -->
     <section id="ecosystem" class="section">
@@ -888,78 +813,105 @@ footer p {
         </div>
     </section>
 
-    <style>
-    .ecosystem-description {
-        max-width: 800px;
-        margin: 0 auto 3rem;
-        text-align: center;
-        color: #e0e0e0;
-    }
-
-    .ecosystem-description p {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .ecosystem-description ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .ecosystem-description li {
-        margin: 0.8rem 0;
-        font-size: 1.1rem;
-        color: #4dabf7;
-    }
-
-    .business-details {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin-top: 4rem;
-        padding: 0 2rem;
-    }
-
-    .detail-card {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 2rem;
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-    }
-
-    .detail-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .detail-card h3 {
-        color: #4dabf7;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .detail-card ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .detail-card li {
-        margin: 0.8rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-    }
-
-    .detail-card li:before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: #4dabf7;
-    }
-    </style>
+    <!-- Company Section (Vision, Mission, People & Culture) -->
+    <section id="company" class="section">
+        <!-- Vision & Mission -->
+        <div class="vision-mission">
+            <div class="vision-section">
+                <div class="vision-container">
+                    <div class="vision-content" data-aos="fade-up">
+                        <h2>Vision</h2>
+                        <p class="vision-text">
+                            EON Protocol envisions a world where the <span class="highlight">free flow of secure and encrypted data</span> 
+                            empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders. 
+                            We strive to establish a digital ecosystem built on <span class="highlight">privacy, security, and interoperability</span>, 
+                            driving trust and innovation globally.
+                        </p>
+                    </div>
+                    
+                    <div class="mission-content" data-aos="fade-up" data-aos-delay="200">
+                        <h2>Mission</h2>
+                        <p class="mission-text">
+                            "We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering 
+                            <span class="highlight">scalable, privacy-preserving, and decentralized technology solutions</span> 
+                            that facilitate the free flow of encrypted data across networks, industries, and borders."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- People & Culture -->
+        <div class="people-culture">
+            <div class="people-section">
+                <h2 style="text-align: center; margin-bottom: 4rem;">People & Culture</h2>
+                <div class="people-container">
+                    <div class="culture-values">
+                        <h3>Core Values</h3>
+                        <div class="values-grid">
+                            <div class="value-item" data-aos="fade-up">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Innovation</h4>
+                                <p>Leveraging cutting-edge blockchain, AI, and Web3 technologies to create privacy-preserving solutions</p>
+                            </div>
+                            <div class="value-item" data-aos="fade-up" data-aos-delay="100">
+                                <i class="fas fa-hands-helping"></i>
+                                <h4>Collaboration</h4>
+                                <p>Fostering a culture of teamwork across employees, partners, and investors</p>
+                            </div>
+                            <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Integrity</h4>
+                                <p>Maintaining transparency and ethical business practices in all operations</p>
+                            </div>
+                            <div class="value-item" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fas fa-users"></i>
+                                <h4>Customer-Centricity</h4>
+                                <p>Prioritizing user needs and creating scalable, secure solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-culture">
+                        <div class="culture-section" data-aos="fade-up">
+                            <h3>Our Culture</h3>
+                            <ul>
+                                <li>Emphasize openness and continuous learning</li>
+                                <li>Embrace challenges with resilience</li>
+                                <li>Foster innovation and creative thinking</li>
+                                <li>Promote diversity and inclusion</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="recruitment-section" data-aos="fade-up">
+                            <h3>Join Our Team</h3>
+                            <div class="positions">
+                                <div class="position-card">
+                                    <h4>Privacy Computing Engineer</h4>
+                                    <ul>
+                                        <li>Technical expertise in blockchain or AI</li>
+                                        <li>Passion for Web3 and decentralization</li>
+                                        <li>Problem-solving mindset</li>
+                                    </ul>
+                                </div>
+                                <div class="position-card">
+                                    <h4>Distributed Systems Engineer</h4>
+                                    <ul>
+                                        <li>Experience with distributed systems</li>
+                                        <li>Strong background in scalable infrastructure</li>
+                                        <li>Focus on performance optimization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section" style="margin-top: 4rem;">
+    <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-header">
                 <div class="contact-options">
@@ -1071,18 +1023,18 @@ footer p {
     }
 
     @keyframes orbit1 {
-        from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-        to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        from { transform: rotate(0deg) translate(150px, 0); }
+        to { transform: rotate(360deg) translate(150px, 0); }
     }
 
     @keyframes orbit2 {
-        from { transform: rotate(0deg) translateX(225px) rotate(0deg); }
-        to { transform: rotate(360deg) translateX(225px) rotate(-360deg); }
+        from { transform: rotate(120deg) translate(225px, 0); }
+        to { transform: rotate(480deg) translate(225px, 0); }
     }
 
     @keyframes orbit3 {
-        from { transform: rotate(0deg) translateX(300px) rotate(0deg); }
-        to { transform: rotate(360deg) translateX(300px) rotate(-360deg); }
+        from { transform: rotate(240deg) translate(300px, 0); }
+        to { transform: rotate(600deg) translate(300px, 0); }
     }
 
     .platform-text {
@@ -1098,203 +1050,6 @@ footer p {
         color: #4dabf7;
         font-size: 1.2rem;
         white-space: nowrap;
-    }
-    </style>
-
-    <!-- Vision & Mission Section -->
-    <section id="vision" class="section vision-section">
-        <!-- ... Vision & Mission content ... -->
-    </section>
-
-    <!-- Ecosystem Section -->
-    <section id="ecosystem" class="section">
-        <!-- ... Ecosystem content ... -->
-    </section>
-
-    <!-- Vision & Mission Section -->
-    <section id="vision" class="section vision-section">
-        <!-- ... Vision & Mission content ... -->
-    </section>
-
-    <!-- People & Culture Section -->
-    <section id="people" class="section people-section">
-        <h2 style="text-align: center; margin-bottom: 4rem;">People & Culture</h2>
-        <div class="people-container">
-            <div class="culture-values">
-                <h3>Core Values</h3>
-                <div class="values-grid">
-                    <div class="value-item" data-aos="fade-up">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Innovation</h4>
-                        <p>Leveraging cutting-edge blockchain, AI, and Web3 technologies to create privacy-preserving solutions</p>
-                    </div>
-                    <div class="value-item" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-hands-helping"></i>
-                        <h4>Collaboration</h4>
-                        <p>Fostering a culture of teamwork across employees, partners, and investors</p>
-                    </div>
-                    <div class="value-item" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Integrity</h4>
-                        <p>Maintaining transparency and ethical business practices in all operations</p>
-                    </div>
-                    <div class="value-item" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-users"></i>
-                        <h4>Customer-Centricity</h4>
-                        <p>Prioritizing user needs and creating scalable, secure solutions</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-culture">
-                <div class="culture-section" data-aos="fade-up">
-                    <h3>Our Culture</h3>
-                    <ul>
-                        <li>Emphasize openness and continuous learning</li>
-                        <li>Embrace challenges with resilience</li>
-                        <li>Foster innovation and creative thinking</li>
-                        <li>Promote diversity and inclusion</li>
-                    </ul>
-                </div>
-                
-                <div class="recruitment-section" data-aos="fade-up">
-                    <h3>Join Our Team</h3>
-                    <div class="positions">
-                        <div class="position-card">
-                            <h4>Privacy Computing Engineer</h4>
-                            <ul>
-                                <li>Technical expertise in blockchain or AI</li>
-                                <li>Passion for Web3 and decentralization</li>
-                                <li>Problem-solving mindset</li>
-                            </ul>
-                        </div>
-                        <div class="position-card">
-                            <h4>Distributed Systems Engineer</h4>
-                            <ul>
-                                <li>Experience with distributed systems</li>
-                                <li>Strong background in scalable infrastructure</li>
-                                <li>Focus on performance optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-    .ecosystem-container {
-        position: relative;
-        height: 1200px;
-        margin: 0 auto;
-        max-width: 1200px;
-    }
-
-    .eco-center {
-        position: absolute;
-        left: 50%;
-        top: 30%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-    }
-
-    .platform-logo {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 150px;
-        height: 150px;
-        background: rgba(0, 102, 204, 0.1);
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-    }
-
-    .orbit {
-        position: absolute;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .orbit-1 {
-        width: 300px;
-        height: 300px;
-    }
-
-    .orbit-2 {
-        width: 450px;
-        height: 450px;
-    }
-
-    .orbit-3 {
-        width: 600px;
-        height: 600px;
-    }
-
-    .orbit-point {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        background: rgba(0, 102, 204, 0.2);
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        transform-origin: 150px 0;
-    }
-
-    .orbit-1 .orbit-point { transform-origin: 150px 0; }
-    .orbit-2 .orbit-point { transform-origin: 225px 0; }
-    .orbit-3 .orbit-point { transform-origin: 300px 0; }
-
-    @keyframes orbit1 {
-        from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-        to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-    }
-
-    @keyframes orbit2 {
-        from { transform: rotate(120deg) translateX(225px) rotate(0deg); }
-        to { transform: rotate(480deg) translateX(225px) rotate(-360deg); }
-    }
-
-    @keyframes orbit3 {
-        from { transform: rotate(240deg) translateX(300px) rotate(0deg); }
-        to { transform: rotate(600deg) translateX(300px) rotate(-360deg); }
-    }
-
-    .orbit-1 .orbit-point {
-        animation: orbit1 20s linear infinite;
-        top: 0;
-        left: 50%;
-    }
-
-    .orbit-2 .orbit-point {
-        animation: orbit2 25s linear infinite;
-        top: 0;
-        left: 50%;
-    }
-
-    .orbit-3 .orbit-point {
-        animation: orbit3 30s linear infinite;
-        top: 0;
-        left: 50%;
-    }
-
-    .orbit-point:hover {
-        transform: scale(1.2);
-        background: rgba(0, 102, 204, 0.3);
-        animation-play-state: paused;
     }
     </style>
 
