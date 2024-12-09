@@ -110,7 +110,7 @@
                 const data = await response.json();
                 if (data.success) {
                     localStorage.setItem('token', data.token);
-                    window.location.href = '../dashboard/index.html';
+                    window.location.href = '../public/dashboard/index.html';
                 } else {
                     alert(data.message);
                 }
