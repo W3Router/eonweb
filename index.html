@@ -819,67 +819,153 @@ footer p {
     <!-- Ecosystem Section -->
     <section id="ecosystem" class="section">
         <h2>Ecosystem & Business Model</h2>
-        <div class="ecosystem-interactive">
+        <div class="ecosystem-container">
+            <!-- 中心平台 -->
             <div class="eco-center">
-                <div class="platform-core">
-                    <img src="public/images/enologo.jpg" alt="EON Platform">
+                <div class="platform-logo">
+                    <img src="public/images/enologo.jpg" alt="EON Protocol">
                     <span>Privacy Computing Platform</span>
                 </div>
-                <div class="eco-orbits">
+                <!-- 轨道系统 -->
+                <div class="orbit-system">
                     <div class="orbit orbit-1">
-                        <div class="orbit-item enterprise" data-type="enterprise">
-                            <div class="orbit-content">
-                                <i class="fas fa-building"></i>
-                                <span>Enterprise</span>
-                            </div>
+                        <div class="orbit-point enterprise">
+                            <i class="fas fa-building"></i>
+                            <span>Enterprise</span>
                         </div>
                     </div>
                     <div class="orbit orbit-2">
-                        <div class="orbit-item developers" data-type="developers">
-                            <div class="orbit-content">
-                                <i class="fas fa-code"></i>
-                                <span>Developers</span>
-                            </div>
+                        <div class="orbit-point developers">
+                            <i class="fas fa-code"></i>
+                            <span>Developers</span>
                         </div>
                     </div>
                     <div class="orbit orbit-3">
-                        <div class="orbit-item community" data-type="community">
-                            <div class="orbit-content">
-                                <i class="fas fa-users"></i>
-                                <span>Community</span>
-                            </div>
+                        <div class="orbit-point community">
+                            <i class="fas fa-users"></i>
+                            <span>Community</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="eco-details">
-                <div class="detail-card enterprise-detail">
-                    <h3>Enterprise</h3>
-                    <ul>
-                        <li>Secure Data Monetization</li>
-                        <li>Privacy-Preserving AI Training</li>
-                        <li>Regulatory Compliance</li>
-                    </ul>
-                </div>
-                <div class="detail-card developers-detail">
-                    <h3>Developers</h3>
-                    <ul>
-                        <li>SDK & API Access</li>
-                        <li>Revenue Sharing Model</li>
-                        <li>Technical Support</li>
-                    </ul>
-                </div>
-                <div class="detail-card community-detail">
-                    <h3>Community</h3>
-                    <ul>
-                        <li>Computing Power Sharing</li>
-                        <li>Data Contribution</li>
-                        <li>Network Growth Rewards</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+    .ecosystem-container {
+        position: relative;
+        height: 600px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    
+    .eco-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .platform-logo {
+        width: 150px;
+        height: 150px;
+        background: rgba(0, 102, 204, 0.1);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .platform-logo img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+    
+    .orbit-system {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .orbit {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+    
+    .orbit-1 {
+        width: 300px;
+        height: 300px;
+        animation: rotate 20s linear infinite;
+    }
+    
+    .orbit-2 {
+        width: 450px;
+        height: 450px;
+        animation: rotate 25s linear infinite reverse;
+    }
+    
+    .orbit-3 {
+        width: 600px;
+        height: 600px;
+        animation: rotate 30s linear infinite;
+    }
+    
+    .orbit-point {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: rgba(0, 102, 204, 0.2);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        animation: counter-rotate 20s linear infinite;
+    }
+    
+    .orbit-point i {
+        font-size: 24px;
+        color: #4dabf7;
+    }
+    
+    .orbit-point span {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
+    .orbit-point:hover {
+        transform: scale(1.2);
+        background: rgba(0, 102, 204, 0.3);
+    }
+    
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    @keyframes counter-rotate {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+    }
+    
+    @media (max-width: 768px) {
+        .ecosystem-container {
+            height: 400px;
+        }
+        
+        .orbit-1 { width: 200px; height: 200px; }
+        .orbit-2 { width: 300px; height: 300px; }
+        .orbit-3 { width: 400px; height: 400px; }
+    }
+    </style>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -958,6 +1044,19 @@ footer p {
             duration: 800,
             once: true
         });
+    </script>
+
+    <script>
+    // 添加交互效果
+    document.querySelectorAll('.orbit-point').forEach(point => {
+        point.addEventListener('mouseenter', () => {
+            point.style.transform = 'scale(1.2)';
+        });
+        
+        point.addEventListener('mouseleave', () => {
+            point.style.transform = 'scale(1)';
+        });
+    });
     </script>
 
 </body>
