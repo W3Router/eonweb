@@ -686,6 +686,165 @@ footer p {
 .social-link.telegram:hover {
   background: #0088cc;
 }
+
+/* 整体布局优化 */
+.about-section {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+}
+
+/* 每个部分的容器 */
+.vision-container,
+.mission-container,
+.values-container,
+.culture-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+/* 标题样式优化 */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: #fff;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4dabf7, #0066cc);
+    border-radius: 2px;
+}
+
+/* Vision & Mission 样式 */
+.vision-content,
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #4dabf7;
+    padding: 2rem 3rem;
+    margin: 3rem 0;
+    background: rgba(77, 171, 247, 0.05);
+    border-radius: 0 10px 10px 0;
+}
+
+/* Values 部分优化 */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    background: rgba(77, 171, 247, 0.1);
+}
+
+.value-card i {
+    font-size: 3rem;
+    color: #4dabf7;
+    margin-bottom: 1.5rem;
+}
+
+/* Culture 部分优化 */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.culture-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.culture-card:hover {
+    transform: translateY(-5px);
+    background: rgba(77, 171, 247, 0.1);
+}
+
+.culture-card h3 {
+    font-size: 1.8rem;
+    color: #4dabf7;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.culture-card h4 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+}
+
+.culture-card ul li {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #e0e0e0;
+}
+
+.culture-card ul li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #4dabf7;
+}
+
+/* 响应式优化 */
+@media (max-width: 1200px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vision-content,
+    .mission-content {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
     </style>
 </head>
 <body>
