@@ -33,12 +33,15 @@
             color: var(--text-color);
             background-color: var(--background-color);
             transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         #particles-js {
             position: absolute;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             background-color: transparent;
             z-index: 1;
         }
@@ -162,7 +165,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: var(--header-height);
+            margin: 0;
+            padding: 0;
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
         }
@@ -170,6 +174,16 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 150px;
+        }
+
+        .hero-content h1,
+        .hero-content p {
+            pointer-events: auto;
         }
 
         .hero h1 {
@@ -178,31 +192,33 @@
         }
 
         .button-container {
-    position: fixed;
-    left: 50%;
-    bottom: 100px;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
+            position: fixed;
+            left: 50%;
+            bottom: 100px;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
 
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #0066cc;
-    color: white !important;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+        .cta-button {
+            pointer-events: auto;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #0066cc;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-.cta-button:hover {
-    background-color: #0052a3;
-    transform: translateY(-2px);
-}
+        .cta-button:hover {
+            background-color: #0052a3;
+            transform: translateY(-2px);
+        }
         .section {
-            padding: 5rem 2rem;
+            padding: 4rem 0;
+            margin: 0;
             position: relative;
             z-index: 2;
             background-color: var(--background-color);
@@ -335,8 +351,14 @@
             padding: 2rem;
             background-color: var(--background-color);
             position: relative;
+<<<<<<< HEAD
             z-index: 2; 
         } 
+=======
+            z-index: 2;
+            margin-top: auto;
+        }
+>>>>>>> b582cf8c15a70dad63c602b0c8ea5b5f88140da5
 
         @media (max-width: 768px) {
             .nav-links {
@@ -486,7 +508,7 @@ footer p {
   margin-bottom: 1rem;
   position: relative;
 }
-
+  
 .contact-header h2::after {
   content: '';
   position: absolute;
@@ -632,10 +654,10 @@ footer p {
   }
 }
 .social-links {
-  padding: 2rem 0;
+  padding: 1rem 0;
+  margin: 0;
   background: #1a1a1a;
   text-align: center;
-  border-top: 1px solid #333;
 }
 
 .social-links-container {
@@ -643,7 +665,6 @@ footer p {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 1rem;
-  padding: 1rem 0;
 }
 
 .social-link {
@@ -687,21 +708,21 @@ footer p {
   background: #0088cc;
 }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <!-- Navigation with Company Logo -->
     <nav class="main-nav" style="background-color: black;">
         <div class="nav-brand">
-            <img src="public/images/enologo.jpg" alt="Company Logo" style="height: 80px; margin-top: 1.5rem;" >
-            <a href="#home"></a>
+            <img src="public/images/enologo.jpg" alt="EON Protocol" style="height: 60px; margin-top: 15px;">
         </div>
         <div class="nav-links">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#projects" class="nav-link">Features</a>
-            <a href="#solution" class="nav-link">Solution</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#home" class="nav-link" style="font-size: 18px; font-weight: 600;">Home</a>
+            <a href="#solution" class="nav-link" style="font-size: 18px; font-weight: 600;">Solution</a>
+            <a href="#resources" class="nav-link" style="font-size: 18px; font-weight: 600;">Resources</a>
+            <a href="#company" class="nav-link" style="font-size: 18px; font-weight: 600;">Company</a>
         </div>
     </nav>
 
@@ -712,16 +733,16 @@ footer p {
             <h1>AI Meets Secure Distributed Power</h1>
             <p>Next-Gen Distributed Computing: Powered by FHE</p>
 
-        <div class="button-container">
-          <a href="public/auth/login.html" class="cta-button">Get started and Earn</a>
+            <div class="button-container">
+                <a href="public/auth/login.html" class="cta-button">Get started and Earn</a>
+            </div>
         </div>
-         
     </section>
 
 
     <!-- Projects Section -->
-    <section id="projects" class="partners-section">
-        <h2>Distributed Computing powered by FHE</h2>
+    <section id="solution" class="partners-section">
+        <h2>Privacy Computing Solution</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>Fully Homomorphic Encryption</h3>
@@ -738,237 +759,503 @@ footer p {
         </div>
     </section>
 
-<section id="feature" class="section solution-section">
-    <div class="solution-container">
-        <div class="solution-image">
-            <img src="public/images/solution.jpg" alt="Solution Image">
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="section">
+        <div class="section-header">
+            <h2>Ecosystem & Business Model</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-network-wired"></i>
+                <span class="divider-line"></span>
+            </div>
         </div>
-        <div class="solution-content">
-            <h2>Data Processing Procedure</h2>
-            <ul>
-                <li>Reducing computation costs via distributed network</li>
-                <li>A: After data is encrypted, it is segmented into small parts</li>
-                <li>B: These data fragments are processed through distributed computation</li>
-                <li>C: The distributed network enhances computational efficiency</li>
-                <li>D: Processing time improves while privacy is maintained</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<section id="solution" class="section solution-section">
-    <div class="solution-container">
-        
-        <div class="solution-content">
-            <h2>Solution</h2>
-            <ul>
-                <li>A distributed FHE platform enabling secure data monetization while preserving privacy.</li>
-                <li>A: Distributed FHE technology</li>
-                <li>B: Secure data monetization</li>
-                <li>C: Third-party application ecosystem</li>
-                <li>D: Regulatory compliance</li>
-            </ul>
-        </div>
-        <div class="solution-image">
-          <img src="public/images/eonsolution.jpg" alt="Solution Image">
-      </div>
-    </div>
-</section>
-
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="about-content">
-            <h2>About Us</h2>
-            <p>Eon Protocol specializes in privacy computing, offering data protection and privacy solutions that ensure security. The team has extensive experience in distributed computing, cryptography, data regulation, which allows them to address complex privacy needs and performance requirements.</p>
-           
- <div class="stats">
-                <div class="stat-item">
-                    <span class="counter" data-target="5">Blockchain</span>
-                    <span>Expert</span>
+        <div class="ecosystem-content">
+            <div class="eco-intro">
+                <div class="ecosystem-svg">
+                    <svg width="800" height="400" viewBox="0 0 800 400">
+                        <!-- 中心平台 -->
+                        <g class="platform">
+                            <polygon class="hexagon" 
+                                points="400,150 450,175 450,225 400,250 350,225 350,175" 
+                                fill="url(#platformGradient)"
+                            />
+                            <text x="400" y="205" text-anchor="middle" fill="#fff">EON</text>
+                        </g>
+                        
+                        <!-- 连接线和节点 -->
+                        <g class="connections">
+                            <path class="connection" d="M450,200 L600,100" stroke="url(#lineGradient)" />
+                            <path class="connection" d="M450,200 L600,300" stroke="url(#lineGradient)" />
+                            <path class="connection" d="M350,200 L200,200" stroke="url(#lineGradient)" />
+                            
+                            <circle class="node enterprise" cx="600" cy="100" r="30" fill="url(#nodeGradient)" />
+                            <circle class="node developers" cx="600" cy="300" r="30" fill="url(#nodeGradient)" />
+                            <circle class="node community" cx="200" cy="200" r="30" fill="url(#nodeGradient)" />
+                        </g>
+                        
+                        <!-- 渐变定义 -->
+                        <defs>
+                            <linearGradient id="platformGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1" />
+                            </linearGradient>
+                            
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1" />
+                            </linearGradient>
+                            
+                            <radialGradient id="nodeGradient">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
                 </div>
-                <div class="stat-item">
-                    <span class="counter" data-target="50">Network</span>
-                    <span> Scientist </span>
+                <p>EON Protocol creates a decentralized privacy computing network that connects enterprises, developers, and community members.</p>
+            </div>
+            <div class="eco-grid">
+                <div class="eco-card">
+                    <div class="eco-card-bg"></div>
+                    <div class="eco-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Enterprise</h3>
+                    <ul>
+                        <li>Secure data monetization</li>
+                        <li>Privacy-preserving AI training</li>
+                        <li>Regulatory compliance</li>
+                    </ul>
+                    <img src="public/images/enterprise-bg.png" alt="" class="card-decoration">
                 </div>
-                <div class="stat-item">
-                    <span class="counter" data-target="50">Data Science</span>
-                    <span> Practitioner </span>
+                <div class="eco-card">
+                    <div class="eco-card-bg"></div>
+                    <div class="eco-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Developers</h3>
+                    <ul>
+                        <li>SDK & API access</li>
+                        <li>Revenue sharing model</li>
+                        <li>Technical support</li>
+                    </ul>
+                    <img src="public/images/developer-bg.png" alt="" class="card-decoration">
+                </div>
+                <div class="eco-card">
+                    <div class="eco-card-bg"></div>
+                    <div class="eco-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <ul>
+                        <li>Computing power sharing</li>
+                        <li>Data contribution</li>
+                        <li>Network growth rewards</li>
+                    </ul>
+                    <img src="public/images/community-bg.png" alt="" class="card-decoration">
                 </div>
             </div>
         </div>
     </section>
 
-<!-- 更合作伙部分 -->
-<section class="partners-section">
-  <h2>Our Partners</h2>
-  <div class="partners-container">
-    <div class="partners-scroll">
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 1">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 2">
-      </a>
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/omo.jpg" alt="Partner 3">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 4">
-      </a>
-      <!-- 复制一组用于无缝滚动 -->
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 1">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/cogitent.jpg" alt="Partner 2">
-      </a>
-      <a href="https://www.antler.co" class="partner-item" target="_blank">
-        <img src="public/images/antler.jpg" alt="Partner 3">
-      </a>
-      <a href="https://cogitent.ventures" class="partner-item" target="_blank">
-        <img src="public/images/omo.jpg" alt="Partner 4">
-      </a>
-    </div>
-  </div>
-</section>
+    <!-- Company Section -->
+    <section id="company" class="section">
+        <div class="section-header">
+            <h2>Our Company</h2>
+            <div class="section-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-star"></i>
+                <span class="divider-line"></span>
+            </div>
+        </div>
+        <div class="company-intro">
+            <div class="vision-mission-container">
+                <div class="vision-block" data-aos="fade-up">
+                    <div class="vision-svg">
+                        <svg width="1200" height="300" viewBox="0 0 1200 300">
+                            <!-- 抽象几何背景 -->
+                            <defs>
+                                <linearGradient id="visionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.2"/>
+                                    <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.05"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- 几何图形背景 -->
+                            <g class="vision-bg">
+                                <path d="M0,150 Q300,0 600,150 T1200,150" stroke="url(#visionGradient)" fill="none" stroke-width="2"/>
+                                <circle cx="600" cy="150" r="100" fill="url(#visionGradient)" opacity="0.3"/>
+                                <polygon points="550,100 650,100 600,200" fill="url(#visionGradient)" opacity="0.2"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <h2>Vision</h2>
+                    <div class="content-box">
+                        <div class="content-bg"></div>
+                        <p>EON Protocol envisions a world where the <span class="highlight">free flow of secure and encrypted data</span> 
+                        empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders.</p>
+                        <p>We strive to establish a digital ecosystem built on <span class="highlight">privacy, security, and interoperability</span>, 
+                        driving trust and innovation globally.</p>
+                    </div>
+                </div>
+                
+                <div class="mission-block" data-aos="fade-up" data-aos-delay="100">
+                    <h2>Mission</h2>
+                    <div class="content-box">
+                        <p>"We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering 
+                        <span class="highlight">scalable, privacy-preserving, and decentralized technology solutions</span> 
+                        that facilitate the free flow of encrypted data across networks, industries, and borders."</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="culture-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="culture-svg">
+                    <svg width="1200" height="300" viewBox="0 0 1200 300">
+                        <defs>
+                            <linearGradient id="cultureGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#4dabf7;stop-opacity:0.3"/>
+                                <stop offset="100%" style="stop-color:#4dabf7;stop-opacity:0.1"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- 文化价值观连接图 -->
+                        <g class="culture-connections">
+                            <circle cx="300" cy="150" r="50" fill="url(#cultureGradient)" class="culture-node"/>
+                            <circle cx="600" cy="150" r="50" fill="url(#cultureGradient)" class="culture-node"/>
+                            <circle cx="900" cy="150" r="50" fill="url(#cultureGradient)" class="culture-node"/>
+                            <path d="M350,150 L550,150" stroke="url(#cultureGradient)" class="culture-line"/>
+                            <path d="M650,150 L850,150" stroke="url(#cultureGradient)" class="culture-line"/>
+                        </g>
+                    </svg>
+                </div>
+                <h2>Culture & Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-card-bg"></div>
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>Leveraging cutting-edge blockchain, AI, and Web3 technologies</p>
+                        <div class="card-glow"></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card-bg"></div>
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Collaboration</h3>
+                        <p>Fostering teamwork across employees, partners, and investors</p>
+                        <div class="card-glow"></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card-bg"></div>
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Integrity</h3>
+                        <p>Maintaining transparency and ethical business practices</p>
+                        <div class="card-glow"></div>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-card-bg"></div>
+                        <i class="fas fa-users"></i>
+                        <h3>Customer-Centricity</h3>
+                        <p>Prioritizing user needs and creating secure solutions</p>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <div class="contact-container">
-    <div class="contact-header">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZcbNV-RH8rXRRBRGAYLFx69HOUddvDsSDX3YjPqXbNY19aQ/viewform?usp=sf_link" target="_blank">
-        <h2>Join the Waitlist</h2>
-      </a>
-      
-      <p class="contact-description">Leave your information to stay updated on upcoming airdrops!</p>
-    </div>
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <div class="contact-options">
+                    <a href="https://docs.google.com/forms/d/xxx" class="contact-link" target="_blank">
+                        <h2>Contact Sales</h2>
+                        <p>Interested in our solution? Let's talk</p>
+                    </a>
+                    <span class="divider">or</span>
+                    <a href="https://docs.google.com/forms/d/xxx" class="contact-link" target="_blank">
+                        <h2>Join Our Team</h2>
+                        <p>Help us build the future of privacy computing</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </div>
+    <style>
+    .contact-options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contact-link {
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+    }
+
+    .contact-link:hover {
+        transform: translateY(-5px);
+    }
+
+    .divider {
+        color: #666;
+        font-size: 1.2rem;
+    }
+    </style>
+
     <!-- Footer -->
-<!-- 更新社交媒体链接部分 -->
-<footer>
-  <div class="social-links">
-    <div class="social-links-container">
-      <a href="https://tiktok.com/@eon_protocol" class="social-link tiktok" target="_blank">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="https://discord.gg/2Yt5eNdm" class="social-link discord" target="_blank">
-        <i class="fab fa-discord"></i>
-      </a>
-      <a href="https://youtube.com/@eon_protocol" class="social-link youtube" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://x.com/eon_protocol" class="social-link twitter" target="_blank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://t.me/Lewismin" class="social-link telegram" target="_blank">
-        <i class="fab fa-telegram"></i>
-      </a>
-    </div>
-    <p>© 2024 EON Protocol. All rights reserved.</p>
-  </div>
-</footer>
+    <footer>
+      <div class="social-links">
+        <div class="social-links-container">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+          <a href="https://tiktok.com/@eon_protocol" class="social-link tiktok" target="_blank">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://discord.gg/2Yt5eNdm" class="social-link discord" target="_blank">
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="https://youtube.com/@eon_protocol" class="social-link youtube" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://x.com/eon_protocol" class="social-link twitter" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://t.me/Lewismin" class="social-link telegram" target="_blank">
+            <i class="fab fa-telegram"></i>
+          </a>
+        </div>
+        <p>© 2024 EON Protocol. All rights reserved.</p>
+      </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="public/js/main.js"></script>
-    <script src="public/js/auth.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 初始化 Particles.js
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                }
-            },
-            "retina_detect": true
+        AOS.init({
+            duration: 800,
+            once: true
         });
-
-        // 主题切换
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        }
-
-        toggleSwitch.addEventListener('change', switchTheme, false);
-
-        // 数字计数器动画
-        const counters = document.querySelectorAll('.counter');
-        
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const increment = target / 200;
-            
-            const updateCounter = () => {
-                const count = +counter.innerText;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCounter, 10);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-
-            updateCounter();
-        });
-
     </script>
-<!-- 添加Font Awesome图标 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script>
+    // 添加交互效果
+    document.querySelectorAll('.orbit-point').forEach(point => {
+        point.addEventListener('mouseenter', () => {
+            point.style.transform = 'scale(1.2)';
+        });
+        
+        point.addEventListener('mouseleave', () => {
+            point.style.transform = 'scale(1)';
+        });
+    });
+    </script>
+
+    <style>
+    .orbit-point {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .orbit-1 .orbit-point {
+        animation: orbit1 20s linear infinite;
+    }
+
+    .orbit-2 .orbit-point {
+        animation: orbit2 25s linear infinite reverse;
+    }
+
+    .orbit-3 .orbit-point {
+        animation: orbit3 30s linear infinite;
+    }
+
+    @keyframes orbit1 {
+        from { transform: rotate(0deg) translate(150px, 0); }
+        to { transform: rotate(360deg) translate(150px, 0); }
+    }
+
+    @keyframes orbit2 {
+        from { transform: rotate(120deg) translate(225px, 0); }
+        to { transform: rotate(480deg) translate(225px, 0); }
+    }
+
+    @keyframes orbit3 {
+        from { transform: rotate(240deg) translate(300px, 0); }
+        to { transform: rotate(600deg) translate(300px, 0); }
+    }
+
+    .platform-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3;
+    }
+
+    .platform-text span {
+        color: #4dabf7;
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+    </style>
+
+    <!-- Section Headers -->
+    <style>
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .section-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .divider-line {
+        height: 1px;
+        width: 100px;
+        background: linear-gradient(90deg, transparent, #4dabf7, transparent);
+        margin: 0 1rem;
+    }
+
+    /* Ecosystem Styles */
+    .eco-hero-image {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        display: block;
+    }
+
+    .eco-card {
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+    }
+
+    .eco-card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(77, 171, 247, 0.1), transparent);
+        z-index: -1;
+    }
+
+    .card-decoration {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 100px;
+        opacity: 0.1;
+    }
+
+    /* Company Section Styles */
+    .section-image {
+        margin-bottom: 2rem;
+    }
+
+    .section-image img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .content-box {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .content-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(77, 171, 247, 0.05), transparent);
+        z-index: -1;
+    }
+
+    .value-card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .value-card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(77, 171, 247, 0.1), transparent);
+        z-index: -1;
+    }
+
+    .card-glow {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(77, 171, 247, 0.2), transparent);
+        border-radius: 50%;
+        top: -50px;
+        right: -50px;
+        z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+        .section-image img {
+            width: 100%;
+        }
+    }
+    </style>
+
+    <style>
+    .ecosystem-svg {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .connection {
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+        animation: dash 20s linear infinite;
+    }
+
+    .node {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .node:hover {
+        transform: scale(1.2);
+        filter: brightness(1.2);
+    }
+
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 1000;
+        }
+    }
+
+    /* 添加动画效果 */
+    .platform {
+        animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    </style>
 
 </body>
 </html>
