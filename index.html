@@ -6,8 +6,687 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eon Protocol</title>
 
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/about.css">
+    <style>
+        :root {
+            --primary-color: #4dabf7;
+            --secondary-color: #adb5bd;
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #4dabf7;
+            --secondary-color: #adb5bd;
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: transparent;
+            z-index: 1;
+        }
+
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            z-index: 1000;
+        }
+
+        .nav-brand a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+/* 样式省略 */
+        .solution-section {
+            display: flex;
+            align-items: flex-start; /* 确保标题与图片顶部平齐 */
+        }
+        
+        .solution-section h2 {
+            margin-top: 1.5rem; /* 确保标题与图片顶部平齐 */
+            margin-bottom: 1.5rem; /* 增大行间距 */
+        }
+        .solution-points {
+            list-style-type: none; /* 移除点 */
+            padding: 0; /* 去除列表默认缩进 */
+        }
+
+        .solution-points li {
+            margin-bottom: 1.5rem; /* 增大行间距 */
+        }
+        
+
+/* Solution Section Styles */
+#solution {
+    padding: 4rem 2rem;
+}
+
+.solution-container {
+    display: flex;
+    align-items: flex-start; /* 改为顶部对齐 */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solution-image {
+    flex: 1;
+}
+
+.solution-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.solution-content {
+    flex: 1;
+    padding-left: 2rem;
+}
+
+.solution-content h2 {
+    margin: 0;  /* 移除标题的默认边距 */
+    margin-bottom: 2rem; /* 标题下方增加间距 */
+}
+
+.solution-content ul {
+    list-style: none;  /* 移除列表项前的点 */
+    padding: 0;
+    margin: 0;
+}
+
+.solution-content ul li {
+    margin-bottom: 2rem; /* 增加列表项之间的间距 */
+    line-height: 1.5;
+}
+
+.solution-content ul li:last-child {
+    margin-bottom: 0; /* 最后一项不需要底部间距 */
+}
+
+
+
+        .nav-brand img {
+            height: 40px;
+            
+            margin-top: 8px; /* 为Logo增加顶部空隙 */
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: var(--header-height);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .button-container {
+    position: fixed;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0066cc;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0052a3;
+    transform: translateY(-2px);
+}
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 2;
+            background-color: var(--background-color);
+        }
+
+        .about-content, 
+        .projects-grid, 
+        .contact-form {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item span:first-child {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--background-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-direction: column;
+            }
+            .form-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+           .form-group label {
+                margin-bottom: 0.5rem;
+            }
+    .solution-container {
+        flex-direction: column;
+    }
+
+    .solution-image {
+        order: -1; /* 将图片移到最上面 */
+    }
+
+    .solution-content {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+        }
+
+/* 更新合作伙伴部分样式 */
+.partners-section {
+  padding: 4rem 0;
+  background: #1a1a1a; /* 深色背景 */
+  text-align: center;
+  color: #fff;
+}
+
+.partners-section h2 {
+  color: #fff;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  position: relative;
+}
+.partners-section h3 {
+  color:  var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+
+.partners-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+}
+
+.partners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 2rem 0;
+  background: #1a1a1a;
+}
+
+.partners-scroll {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  gap: 3rem;
+}
+
+.partner-item {
+  flex: 0 0 200px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  background: #2a2a2a; /* 稍微亮一点的背景 */
+  border-radius: 10px;
+}
+
+.partner-item:hover {
+  transform: scale(1.1);
+  background: #333;
+  box-shadow: 0 0 20px rgba(0,123,255,0.2);
+}
+
+.partner-item img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.1); /* 调整图片在暗色背景上的显示效果 */
+}
+
+
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+footer p {
+  color: #888;
+  margin: 0;
+  padding: 1rem 0;
+  background: #1a1a1a;
+}
+.contact-section {
+  background: #1a1a1a;
+  padding: 5rem 0;
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.contact-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+}
+
+.contact-description {
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  background: #2a2a2a;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+/* 社交媒体和钱包地址字段 */
+.form-group.social-media,
+.form-group.wallet-address {
+  display: flex;
+  align-items: center;
+}
+
+.form-group.social-media label,
+.form-group.wallet-address label {
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+.form-group.social-media .form-control,
+.form-group.wallet-address .form-control {
+  flex-grow: 1;
+}
+
+.submit-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.form-control:invalid {
+  border-color: #dc3545;
+}
+
+.form-control:valid {
+  border-color: #28a745;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 0 15px;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+  
+  .form-group.social-media,
+  .form-group.wallet-address {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-group.social-media label,
+  .form-group.wallet-address label {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+.social-links {
+  padding: 2rem 0;
+  background: #1a1a1a;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+}
+
+.social-link {
+  color: #888;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link:hover {
+  color: #fff;
+  background: #007bff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.social-link.tiktok:hover {
+  background: #000;
+}
+
+.social-link.discord:hover {
+  background: #7289da;
+}
+
+.social-link.youtube:hover {
+  background: #ff0000;
+}
+
+.social-link.twitter:hover {
+  background: #1da1f2;
+}
+
+.social-link.telegram:hover {
+  background: #0088cc;
+}
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -98,94 +777,23 @@
 
 
     <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="about-wrapper">
-            <!-- Vision -->
-            <div class="vision-container">
-                <h2 class="section-title">Vision</h2>
-                <div class="vision-content">
-                    <p class="highlight-text">
-                        EON Protocol envisions a world where the <span class="highlight">free flow of secure and encrypted data</span> 
-                        empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders.
-                    </p>
-                    <p>
-                        We strive to establish a digital ecosystem built on <span class="highlight">privacy, security, and interoperability</span>, 
-                        driving trust and innovation globally.
-                    </p>
+    <section id="about" class="section">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>Eon Protocol specializes in privacy computing, offering data protection and privacy solutions that ensure security. The team has extensive experience in distributed computing, cryptography, data regulation, which allows them to address complex privacy needs and performance requirements.</p>
+           
+ <div class="stats">
+                <div class="stat-item">
+                    <span class="counter" data-target="5">Blockchain</span>
+                    <span>Expert</span>
                 </div>
-            </div>
-
-            <!-- Mission -->
-            <div class="mission-container">
-                <h2 class="section-title">Mission</h2>
-                <div class="mission-content">
-                    <blockquote>
-                        "We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering 
-                        <span class="highlight">scalable, privacy-preserving, and decentralized technology solutions</span> 
-                        that facilitate the free flow of encrypted data across networks, industries, and borders."
-                    </blockquote>
+                <div class="stat-item">
+                    <span class="counter" data-target="50">Network</span>
+                    <span> Scientist </span>
                 </div>
-            </div>
-
-            <!-- Core Values -->
-            <div class="values-container">
-                <h2 class="section-title">Core Values</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Innovation</h3>
-                        <p>Leveraging cutting-edge blockchain, AI, and Web3 technologies</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fas fa-hands-helping"></i>
-                        <h3>Collaboration</h3>
-                        <p>Fostering a culture of teamwork across stakeholders</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Integrity</h3>
-                        <p>Maintaining transparency and ethical business practices</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Customer-Centricity</h3>
-                        <p>Prioritizing user needs with scalable, secure solutions</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- People and Culture -->
-            <div class="culture-container">
-                <h2 class="section-title">People & Culture</h2>
-                <div class="culture-grid">
-                    <div class="culture-card">
-                        <h3><i class="fas fa-user-tie"></i> Employees</h3>
-                        <div class="culture-content">
-                            <h4>Recruitment Criteria</h4>
-                            <ul>
-                                <li>Technical expertise in blockchain, telco, or AI</li>
-                                <li>Proactive, problem-solving mindset</li>
-                                <li>Passion for Web3 and decentralization</li>
-                            </ul>
-                            <h4>Cultural Fit</h4>
-                            <ul>
-                                <li>Openness to learning</li>
-                                <li>Resilience in challenges</li>
-                                <li>Collaborative spirit</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="culture-card">
-                        <h3><i class="fas fa-handshake"></i> Partners & Investors</h3>
-                        <div class="culture-content">
-                            <h4>Alignment</h4>
-                            <ul>
-                                <li>Long-term vision focus</li>
-                                <li>Privacy-first mindset</li>
-                                <li>Innovation-driven approach</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="50">Data Science</span>
+                    <span> Practitioner </span>
                 </div>
             </div>
         </div>
