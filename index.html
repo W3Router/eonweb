@@ -806,14 +806,16 @@ footer p {
             background: rgba(255, 255, 255, 0.05);
             border: none;
             border-radius: 15px;
-            color: var(--text-color);
+            color: var(--primary-color);
             cursor: pointer;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             width: 100%;
             text-align: left;
             margin-bottom: 1rem;
             position: relative;
             transition: all 0.3s ease;
+            font-size: 1.8rem;
+            font-weight: bold;
         }
 
         .collapsible:hover {
@@ -825,11 +827,11 @@ footer p {
             color: var(--primary-color);
             font-weight: bold;
             float: right;
-            font-size: 1.5rem;
-            line-height: 1;
+            font-size: 1.8rem;
+            margin-left: 1rem;
         }
 
-        .active:after {
+        .collapsible.active:after {
             content: '-';
         }
 
@@ -839,13 +841,12 @@ footer p {
             transition: max-height 0.3s ease-out;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 0 0 15px 15px;
+            padding: 0 2rem;
         }
 
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
+        .collapsible-content.show {
+            max-height: 2000px;
+            padding: 2rem;
         }
     </style>
 </head>
@@ -1093,10 +1094,18 @@ footer p {
 </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="public/js/main.js"></script>
-    <script src="public/js/auth.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    content.classList.toggle("show");
+                });
+            }
+        });
+        
         // 初始化 Particles.js
         particlesJS("particles-js", {
             "particles": {
@@ -1186,22 +1195,6 @@ footer p {
             };
 
             updateCounter();
-        });
-
-        // Collapsible sections
-        document.addEventListener('DOMContentLoaded', function() {
-            var coll = document.getElementsByClassName("collapsible");
-            for (var i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            }
         });
     </script>
 <!-- 添加Font Awesome图标 -->
