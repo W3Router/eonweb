@@ -686,6 +686,114 @@ footer p {
 .social-link.telegram:hover {
   background: #0088cc;
 }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .about-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .values-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .values-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .values-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        .culture-subsection {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .culture-subsection h4 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .culture-subsection h5 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        .culture-content ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .culture-content ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .culture-content ul li::before {
+            content: '→';
+            color: var(--primary-color);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .about-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .culture-subsection {
+                padding: 1rem;
+            }
+
+            .culture-subsection h4 {
+                font-size: 1.2rem;
+            }
+
+            .culture-content ul {
+                padding-left: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -780,20 +888,89 @@ footer p {
     <section id="about" class="section">
         <div class="about-content">
             <h2>About Us</h2>
-            <p>Eon Protocol specializes in privacy computing, offering data protection and privacy solutions that ensure security. The team has extensive experience in distributed computing, cryptography, data regulation, which allows them to address complex privacy needs and performance requirements.</p>
-           
- <div class="stats">
+            
+            <!-- Vision Section -->
+            <div class="about-section">
+                <h3>Vision</h3>
+                <p>EON Protocol envisions a world where the free flow of secure and encrypted data empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders. We strive to establish a digital ecosystem built on privacy, security, and interoperability, driving trust and innovation globally.</p>
+            </div>
+
+            <!-- Mission Section -->
+            <div class="about-section">
+                <h3>Mission</h3>
+                <p>We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering scalable, privacy-preserving, and decentralized technology solutions that facilitate the free flow of encrypted data across networks, industries, and borders.</p>
+            </div>
+
+            <!-- Core Values Section -->
+            <div class="about-section">
+                <h3>Core Values</h3>
+                <ul class="values-list">
+                    <li><strong>Innovation:</strong> Leveraging cutting-edge blockchain, AI, and Web3 technologies to create privacy-preserving and decentralized solutions.</li>
+                    <li><strong>Collaboration:</strong> Fostering a culture of teamwork across employees, partners, and investors to achieve shared goals.</li>
+                    <li><strong>Integrity:</strong> Maintaining transparency and ethical business practices in all operations.</li>
+                    <li><strong>Customer-Centricity:</strong> Prioritizing user needs and creating scalable, secure solutions for enterprises and individuals.</li>
+                </ul>
+            </div>
+
+            <!-- People and Culture Section -->
+            <div class="about-section">
+                <h3>People and Culture</h3>
+                
+                <div class="culture-subsection">
+                    <h4>Employees</h4>
+                    <div class="culture-content">
+                        <h5>Recruitment Criteria</h5>
+                        <ul>
+                            <li>Candidates must align with EON Protocol's values, demonstrate technical expertise in blockchain, telco, or AI, and possess a proactive, problem-solving mindset.</li>
+                            <li>A passion for Web3 and decentralization is a significant plus.</li>
+                        </ul>
+                        
+                        <h5>Cultural Fit</h5>
+                        <ul>
+                            <li>Emphasize openness, continuous learning, and resilience in the face of challenges.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="culture-subsection">
+                    <h4>Investors</h4>
+                    <div class="culture-content">
+                        <h5>Alignment</h5>
+                        <ul>
+                            <li>Investors should resonate with EON Protocol's vision of decentralized privacy-first solutions and have a long-term focus.</li>
+                        </ul>
+                        
+                        <h5>Board Representation</h5>
+                        <ul>
+                            <li>Engage with investors who actively contribute expertise without compromising the company's innovative spirit.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="culture-subsection">
+                    <h4>Permanent Partners</h4>
+                    <div class="culture-content">
+                        <h5>Selection Criteria</h5>
+                        <ul>
+                            <li>Work with organizations committed to innovation, privacy, and compliance in fintech and Web3 ecosystems.</li>
+                            <li>Partners should actively collaborate to enhance the ecosystem.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
                 <div class="stat-item">
                     <span class="counter" data-target="5">Blockchain</span>
                     <span>Expert</span>
                 </div>
                 <div class="stat-item">
                     <span class="counter" data-target="50">Network</span>
-                    <span> Scientist </span>
+                    <span>Scientist</span>
                 </div>
                 <div class="stat-item">
                     <span class="counter" data-target="50">Data Science</span>
-                    <span> Practitioner </span>
+                    <span>Practitioner</span>
                 </div>
             </div>
         </div>
@@ -867,7 +1044,7 @@ footer p {
         <i class="fab fa-telegram"></i>
       </a>
     </div>
-    <p>© 2024 EON Protocol. All rights reserved.</p>
+    <p> 2024 EON Protocol. All rights reserved.</p>
   </div>
 </footer>
 
