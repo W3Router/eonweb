@@ -146,7 +146,44 @@
     margin-bottom: 0; /* 最后一项不需要底部间距 */
 }
 
+.solution-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
+        .solution-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .solution-list li::before {
+            content: '→';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .solution-content h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .solution-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
 
         .nav-brand img {
             height: 40px;
@@ -922,13 +959,12 @@ footer p {
     <div class="solution-container">
         
         <div class="solution-content">
-            <h2>Solution</h2>
-            <ul>
-                <li>A distributed FHE platform enabling secure data monetization while preserving privacy.</li>
-                <li>A: Distributed FHE technology</li>
-                <li>B: Secure data monetization</li>
-                <li>C: Third-party application ecosystem</li>
-                <li>D: Regulatory compliance</li>
+            <h2>Our Solution</h2>
+            <ul class="solution-list">
+                <li>积极引入第三方开发者和数据提供方，为其数据交易提供全方位的合规保障和隐私保护服务</li>
+                <li>建立活跃的社区生态，鼓励用户参与AI数据支持，实现数据价值最大化</li>
+                <li>通过分布式技术和隐私计算，确保数据在使用过程中的安全性</li>
+                <li>为数据提供方和使用方搭建安全、高效的桥梁，促进数据经济发展</li>
             </ul>
         </div>
         <div class="solution-image">
