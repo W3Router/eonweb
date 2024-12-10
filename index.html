@@ -1,4 +1,3 @@
-@ -1,944 +0,0 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -794,6 +793,60 @@ footer p {
                 padding-left: 1rem;
             }
         }
+
+        /* Add new styles for the about section layout */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .collapsible {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 15px;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 1rem 2rem;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .collapsible:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .collapsible:after {
+            content: '+';
+            color: var(--primary-color);
+            font-weight: bold;
+            float: right;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .active:after {
+            content: '-';
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0 0 15px 15px;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -889,72 +942,78 @@ footer p {
         <div class="about-content">
             <h2>About Us</h2>
             
-            <!-- Vision Section -->
-            <div class="about-section">
-                <h3>Vision</h3>
-                <p>EON Protocol envisions a world where the free flow of secure and encrypted data empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders. We strive to establish a digital ecosystem built on privacy, security, and interoperability, driving trust and innovation globally.</p>
-            </div>
-
-            <!-- Mission Section -->
-            <div class="about-section">
-                <h3>Mission</h3>
-                <p>We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering scalable, privacy-preserving, and decentralized technology solutions that facilitate the free flow of encrypted data across networks, industries, and borders.</p>
-            </div>
-
-            <!-- Core Values Section -->
-            <div class="about-section">
-                <h3>Core Values</h3>
-                <ul class="values-list">
-                    <li><strong>Innovation:</strong> Leveraging cutting-edge blockchain, AI, and Web3 technologies to create privacy-preserving and decentralized solutions.</li>
-                    <li><strong>Collaboration:</strong> Fostering a culture of teamwork across employees, partners, and investors to achieve shared goals.</li>
-                    <li><strong>Integrity:</strong> Maintaining transparency and ethical business practices in all operations.</li>
-                    <li><strong>Customer-Centricity:</strong> Prioritizing user needs and creating scalable, secure solutions for enterprises and individuals.</li>
-                </ul>
-            </div>
-
-            <!-- People and Culture Section -->
-            <div class="about-section">
-                <h3>People and Culture</h3>
-                
-                <div class="culture-subsection">
-                    <h4>Employees</h4>
-                    <div class="culture-content">
-                        <h5>Recruitment Criteria</h5>
-                        <ul>
-                            <li>Candidates must align with EON Protocol's values, demonstrate technical expertise in blockchain, telco, or AI, and possess a proactive, problem-solving mindset.</li>
-                            <li>A passion for Web3 and decentralization is a significant plus.</li>
-                        </ul>
-                        
-                        <h5>Cultural Fit</h5>
-                        <ul>
-                            <li>Emphasize openness, continuous learning, and resilience in the face of challenges.</li>
-                        </ul>
-                    </div>
+            <!-- Vision and Mission Grid -->
+            <div class="about-grid">
+                <!-- Vision Section -->
+                <div class="about-section">
+                    <h3>Vision</h3>
+                    <p>EON Protocol envisions a world where the free flow of secure and encrypted data empowers individuals, enterprises, and organizations to collaborate seamlessly within and across borders. We strive to establish a digital ecosystem built on privacy, security, and interoperability, driving trust and innovation globally.</p>
                 </div>
 
-                <div class="culture-subsection">
-                    <h4>Investors</h4>
-                    <div class="culture-content">
-                        <h5>Alignment</h5>
-                        <ul>
-                            <li>Investors should resonate with EON Protocol's vision of decentralized privacy-first solutions and have a long-term focus.</li>
-                        </ul>
-                        
-                        <h5>Board Representation</h5>
-                        <ul>
-                            <li>Engage with investors who actively contribute expertise without compromising the company's innovative spirit.</li>
-                        </ul>
-                    </div>
+                <!-- Mission Section -->
+                <div class="about-section">
+                    <h3>Mission</h3>
+                    <p>We empower enterprises and individuals to achieve secure and seamless data collaboration by delivering scalable, privacy-preserving, and decentralized technology solutions that facilitate the free flow of encrypted data across networks, industries, and borders.</p>
                 </div>
+            </div>
 
-                <div class="culture-subsection">
-                    <h4>Permanent Partners</h4>
-                    <div class="culture-content">
-                        <h5>Selection Criteria</h5>
-                        <ul>
-                            <li>Work with organizations committed to innovation, privacy, and compliance in fintech and Web3 ecosystems.</li>
-                            <li>Partners should actively collaborate to enhance the ecosystem.</li>
-                        </ul>
+            <!-- Collapsible Core Values Section -->
+            <button class="collapsible">Core Values</button>
+            <div class="collapsible-content">
+                <div class="about-section" style="margin-bottom: 0;">
+                    <ul class="values-list">
+                        <li><strong>Innovation:</strong> Leveraging cutting-edge blockchain, AI, and Web3 technologies to create privacy-preserving and decentralized solutions.</li>
+                        <li><strong>Collaboration:</strong> Fostering a culture of teamwork across employees, partners, and investors to achieve shared goals.</li>
+                        <li><strong>Integrity:</strong> Maintaining transparency and ethical business practices in all operations.</li>
+                        <li><strong>Customer-Centricity:</strong> Prioritizing user needs and creating scalable, secure solutions for enterprises and individuals.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Collapsible People and Culture Section -->
+            <button class="collapsible">People and Culture</button>
+            <div class="collapsible-content">
+                <div class="about-section" style="margin-bottom: 0;">
+                    <div class="culture-subsection">
+                        <h4>Employees</h4>
+                        <div class="culture-content">
+                            <h5>Recruitment Criteria</h5>
+                            <ul>
+                                <li>Candidates must align with EON Protocol's values, demonstrate technical expertise in blockchain, telco, or AI, and possess a proactive, problem-solving mindset.</li>
+                                <li>A passion for Web3 and decentralization is a significant plus.</li>
+                            </ul>
+                            
+                            <h5>Cultural Fit</h5>
+                            <ul>
+                                <li>Emphasize openness, continuous learning, and resilience in the face of challenges.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="culture-subsection">
+                        <h4>Investors</h4>
+                        <div class="culture-content">
+                            <h5>Alignment</h5>
+                            <ul>
+                                <li>Investors should resonate with EON Protocol's vision of decentralized privacy-first solutions and have a long-term focus.</li>
+                            </ul>
+                            
+                            <h5>Board Representation</h5>
+                            <ul>
+                                <li>Engage with investors who actively contribute expertise without compromising the company's innovative spirit.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="culture-subsection" style="margin-bottom: 0;">
+                        <h4>Permanent Partners</h4>
+                        <div class="culture-content">
+                            <h5>Selection Criteria</h5>
+                            <ul>
+                                <li>Work with organizations committed to innovation, privacy, and compliance in fintech and Web3 ecosystems.</li>
+                                <li>Partners should actively collaborate to enhance the ecosystem.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1129,6 +1188,21 @@ footer p {
             updateCounter();
         });
 
+        // Collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        });
     </script>
 <!-- 添加Font Awesome图标 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
