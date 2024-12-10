@@ -847,7 +847,7 @@ footer p {
         <div class="hero-content">
             <h1>AI Meets Secure Distributed Power</h1>
             <p>Next-Gen Distributed Computing: Powered by FHE</p>
-
+        </div>
         <div class="button-container">
           <a href="public/auth/login.html" class="cta-button">Get started and Earn</a>
         </div>
@@ -1048,6 +1048,7 @@ footer p {
 </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var coll = document.getElementsByClassName("collapsible");
@@ -1061,61 +1062,61 @@ footer p {
         });
         
         // 初始化 Particles.js
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
                     }
                 },
-                "color": {
-                    "value": "#ffffff"
+                color: {
+                    value: '#4dabf7'
                 },
-                "shape": {
-                    "type": "circle"
+                shape: {
+                    type: 'circle'
                 },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false
+                opacity: {
+                    value: 0.5,
+                    random: false
                 },
-                "size": {
-                    "value": 3,
-                    "random": true
+                size: {
+                    value: 3,
+                    random: true
                 },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#4dabf7',
+                    opacity: 0.4,
+                    width: 1
                 },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
                 }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
                     },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
                     },
-                    "resize": true
+                    resize: true
                 }
             },
-            "retina_detect": true
+            retina_detect: true
         });
 
         // 主题切换
