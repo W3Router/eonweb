@@ -41,6 +41,42 @@ class UserService {
         console.log('Found user:', user);
         return user;
     }
+
+    static async generateReferralCode(userId) {
+        const user = await User.findById(userId);
+        if (!user) throw new Error('User not found');
+
+        // 生成随机推荐码
+        const code = Math.random().toString(36).substring(2, 8).toUpperCase();
+        
+        // 设置一个月有效期
+        const expiry = new Date();
+        expiry.setMonth(expiry.getMonth() + 1);
+
+        user.referralCode = code;
+        user.referralCodeExpiry = expiry;
+        await user.save();
+
+        return {
+            code,
+            expiry,
+            referralLink: `https://w3router.github.io/eonweb/public/auth/register.html?ref=${code}`
+        };
+    }
+
+    static async getReferralStats(userId) {
+        const user = await User.findById(userId);
+        if (!user) throw new Error('User not found');
+
+        return {
+            referralCode: user.referralCode,
+            referralCodeExpiry: user.referralCodeExpiry,
+            referralCount: user.referralCount,
+            referralLink: user.referralCode ? 
+                `https://w3router.github.io/eonweb/public/auth/register.html?ref=${user.referralCode}` : 
+                null
+        };
+    }
 }
 
 module.exports = UserService;
